@@ -25,3 +25,17 @@
       extras="w-fit h-fit"
     />
   </fieldset>
+
+  <fieldset className="border-[2px] p-2 rounded-lg dark:border-navy-200">
+    <legend className="text-xl text-navy-700 dark:text-white px-1.5">
+      Student Address Line 2<span className="text-red-500">*</span>
+    </legend>
+    <input
+      type="number"
+      name="reg_no"
+      id="reg_no"
+      placeholder="At The Time Of Admission"
+      className="outline-none w-full bg-[#00000000] text-[#a0aec0] dark:text-white px-1.5"
+      required
+    />
+  </fieldset>
