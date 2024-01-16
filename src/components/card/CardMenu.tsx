@@ -6,9 +6,11 @@ import { AiOutlineShop } from "react-icons/ai";
 import { TiLightbulb } from "react-icons/ti";
 import DropdownAlt from "../dropdown/index_alt";
 
-function CardMenu(props: { transparent?: boolean }) {
+function CardMenu(props: { transparent?: boolean, panelList?:any }) {
   const { transparent } = props;
+  const { panelList } = props;
   const [open, setOpen] = React.useState(false);
+console.log(panelList);
 
   return (
     <DropdownAlt
