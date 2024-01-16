@@ -126,7 +126,7 @@ function FillAttendanceTable(props: {
         </THeade>
 
         <TBody>
-          {tableDataMain.map((r: any, r_i: number) => 
+          {tableDataMain.map((r: any, r_i: number) => {
             return (
               <Tr>
                 <Td>{r_i + 1}</Td>
