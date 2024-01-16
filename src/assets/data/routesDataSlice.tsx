@@ -123,6 +123,8 @@ import GenerateEmployeeID from "../../views/admin/idcardmanagement/idcardmanagem
 import GenerateStudentHostelID from "../../views/admin/idcardmanagement/idcardmanagementpanel/generatestudenthostelid";
 import GenerateBusID from "../../views/admin/idcardmanagement/idcardmanagementpanel/generatebusid";
 import FillStudentAttendance from "../../views/admin/attendancemanagement/studentattendancepanel/fillstudentattendance";
+import StudentAttendanceList from "../../views/admin/attendancemanagement/studentattendancepanel/studentattendancelist";
+import StudentAttendanceGraphs from "../../views/admin/attendancemanagement/studentattendancepanel/attendancegraphs";
 
 const styleOne = {
   fontSize: "2.5em",
@@ -821,14 +823,16 @@ const AttendanceManagementModules: CoreData[] | null = true
             name: "Student Attendance List",
             icon: <LuList />,
             icon2: <LuList style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/student-attendance-list",
+            component:<StudentAttendanceList/>,
             modules: [],
           },
           {
             name: "Attendance Graphs",
             icon: <LuPieChart />,
             icon2: <LuPieChart style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/student-attendance-report",
+            component:<StudentAttendanceGraphs/>,
             modules: [],
           },
           {
