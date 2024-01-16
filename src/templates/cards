@@ -1,0 +1,8 @@
+<Card className="rounded-xl bg-white dark:bg-navy-800 p-5 mb-5">
+  <h2 className="text-2xl font-bold dark:text-white">
+    Find Class & Update Details
+  </h2>
+  <div
+    className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4"
+  ></div
+></Card>

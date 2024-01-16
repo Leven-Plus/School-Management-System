@@ -9,7 +9,7 @@ import {
   Tr,
 } from "../../../../../../components/table/Table";
 
-function GenderWiseStrengthReportList(props: {
+function SiblingReportList(props: {
   tableData: any;
   tableName?: string;
 }) {
@@ -41,43 +41,50 @@ function GenderWiseStrengthReportList(props: {
         <div className="relative flex items-center justify-between pt-4">
           <p className="w-[250px] font-bold">Disc Code:</p>
           <h2 className="text-2xl font-bold dark:text-white pl-2">
-            SECTION WISE STUDENT STRENGTH INFO
-          </h2>
-          <p className="w-[250px] font-bold">School Code:</p>
+            {tableName}
+          </h2>{" "}
+          <p className="w-[250px] font-bold flex flex-row-reverse">
+            <span>: School Code</span>
+            <span></span>
+          </p>
         </div>
       </header>
 
       <Table tableExtras={`w-full`} overflowX="hidden">
         <THeade>
           <Tr>
-            <Th>S No.</Th>
-            <Th>Class Name</Th>
-            <Th>Total Student</Th>
-            <Th>Old Student</Th>
-            <Th>New Student</Th>
-            <Th>Male</Th>
-            <Th>Female</Th>
+            <Th extras="text-[0.8em]">S No.</Th>
+            <Th extras="text-[0.8em]">Sibling ID</Th>
+            <Th extras="text-[0.8em]">Father Name</Th>
+            <Th extras="text-[0.8em]">Mother Name</Th>
+            <Th extras="text-[0.8em]">Student ID</Th>
+            <Th extras="text-[0.8em]">Student Name</Th>
+            <Th extras="text-[0.8em]">Student Gender</Th>
+            <Th extras="text-[0.8em]">Class Info</Th>
+            <Th extras="text-[0.8em]">DOB</Th>
+            <Th extras="text-[0.8em]">Contact No.</Th>
+            <Th extras="text-[0.8em]">Admission Date</Th>
+            <Th extras="text-[0.8em]">Admission Number</Th>
           </Tr>
         </THeade>
 
         <TBody>
           {tableDataMain.map((r: any, r_i: number) => {
             return (
-            <Tr>
-              <Td>
-              {tableDataMain?.length - 1 !== r_i ? r_i + 1 : ""}
-              </Td>
-              <Td>
-                {r}
-              </Td>
-              <Td>
-                10
-              </Td>
-              <Td>8</Td>
-              <Td>2</Td>
-              <Td>7</Td>
-              <Td>3</Td>
-            </Tr>
+             <Tr>
+                <Td>{r_i + 1}</Td>
+                <Td>234324324324</Td>
+                <Td>Ram Dubey</Td>
+                <Td>Sunita Dubey</Td>
+                <Td>34234234</Td>
+                <Td>Shweta Dubey</Td>
+                <Td>Female</Td>
+                <Td>Class 7-[A]</Td>
+                <Td>07-01-2015</Td>
+                <Td>9999999999</Td>
+                <Td>06-09-2014</Td>
+                <Td>ADM/2014/001</Td>
+             </Tr>
             );
           })}
         </TBody>
@@ -86,4 +93,4 @@ function GenderWiseStrengthReportList(props: {
   );
 }
 
-export default GenderWiseStrengthReportList;
+export default SiblingReportList;

@@ -1,5 +1,5 @@
 import Card from "../../../../../components/card";
-import GenderWiseStrengthReportList from "./components";
+import GenderWiseStrengthReportList from "./components/GenderWiseStrengthReportList";
 
 const ClassInfo = [
   "Pre School",
@@ -33,11 +33,11 @@ const GenderWiseStrengthReport = () => {
   return (
     <Card className="rounded-xl bg-white dark:bg-navy-800 p-5 mb-5">
       <h2 className="text-2xl font-bold dark:text-white">
-        Section Stream Wise Strength Report
+        Gender Wise Students Strength Report
       </h2>
       <GenderWiseStrengthReportList
         tableData={ClassInfo}
-        tableName="Overall Student Strength Info"
+        tableName="GENDER WISE STRENGTH INFO"
       />
     </Card>
   );

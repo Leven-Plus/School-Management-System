@@ -1,5 +1,5 @@
 import Card from "../../../../../components/card";
-import SectionStreamWiseStrengthReportList from "./components";
+import SectionStreamWiseStrengthReportList from "./components/SectionStreamWiseStrengthReportList";
 
 const ClassInfo = [
   "Pre School",
@@ -38,7 +38,7 @@ const SectionStreamWiseStengthReport = () => {
         </h2>
         <SectionStreamWiseStrengthReportList
           tableData={ClassInfo}
-          tableName="Section Stream Wise Strength Report"
+          tableName="SECTION STREAM WISE STRENGTH INFO"
         />  
       </Card>
     </>

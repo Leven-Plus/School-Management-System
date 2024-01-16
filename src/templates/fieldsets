@@ -1,0 +1,27 @@
+/////////////////////////////////////////////////////////
+
+<fieldset className="border-[2px] p-2 rounded-lg dark:border-navy-200">
+  <legend
+    id="classXyz"
+    className="text-xl text-navy-700 dark:text-white px-1.5"
+  >
+    Select Class<span className="text-red-500">*</span>
+  </legend>
+  <select
+    name="classXyz"
+    id="classXyz"
+    className="outline-none w-full bg-[#00000000] text-[#a0aec0] dark:text-white px-1.5"
+    required
+  >
+    <option value="Select Class">Select Class</option>
+  </select>
+</fieldset>
+
+<fieldset className="border-0 pt-4 rounded-lg">
+    <Button
+      name={<span>Get List</span>}
+      onCLick={() => console.log("clicked")}
+      style="blue"
+      extras="w-fit h-fit"
+    />
+  </fieldset>

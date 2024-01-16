@@ -1,4 +1,4 @@
- import CardMenu from "../../../../../../components/card/CardMenu";
+import CardMenu from "../../../../../../components/card/CardMenu";
 import Card from "../../../../../../components/card";
 import {
   TBody,
@@ -9,18 +9,16 @@ import {
   Tr,
 } from "../../../../../../components/table/Table";
 
-function SectionStreamWiseStrengthReportList(props: {
+function GenderWiseStrengthReportList(props: {
   tableData: any;
   tableName?: string;
 }) {
-  const Alphabet:any = [];
-  
+  const Alphabet: any = [];
+
   for (let index = 0; index < 26; index++) {
     const startingNum = 65;
-    Alphabet.push(
-      String.fromCharCode(startingNum + index)
-      )
-    }
+    Alphabet.push(String.fromCharCode(startingNum + index));
+  }
 
   const { tableData: tableDataMain, tableName } = props;
   console.log(tableDataMain);
@@ -35,17 +33,20 @@ function SectionStreamWiseStrengthReportList(props: {
       <header>
         <div className="relative flex items-center justify-between pt-4">
           <div></div>
-          <h1 className="text-2xl font-semibold dark:text-white text-center">
+          <h1 className="text-2xl font-semibold dark:text-white pl-2">
             P.P Savani School
           </h1>
           <CardMenu />
         </div>
         <div className="relative flex items-center justify-between pt-4">
           <p className="w-[250px] font-bold">Disc Code:</p>
-          <h2 className="text-2xl font-bold dark:text-white text-center">
-            SECTION WISE STUDENT STRENGTH INFO
-          </h2>
-          <p className="w-[250px] font-bold">School Code:</p>
+          <h2 className="text-2xl font-bold dark:text-white pl-2">
+            {tableName}
+          </h2>{" "}
+          <p className="w-[250px] font-bold flex flex-row-reverse">
+            <span>: School Code</span>
+            <span></span>
+          </p>
         </div>
       </header>
 
@@ -57,28 +58,24 @@ function SectionStreamWiseStrengthReportList(props: {
             <Th>Total Student</Th>
             <Th>Old Student</Th>
             <Th>New Student</Th>
-            {Alphabet?.map((alphabet:any, index:any) => {
-              return <Th key={index}>{
-                alphabet
-              }</Th>;
-            })}
+            <Th>Male</Th>
+            <Th>Female</Th>
           </Tr>
         </THeade>
 
         <TBody>
           {tableDataMain.map((r: any, r_i: number) => {
             return (
-              <Tr extras={tableDataMain?.length - 1 === r_i ? "" : "border-b-2"} >
-                <Td>{tableDataMain?.length - 1 === r_i ? ""  : r_i}</Td>
+              <Tr
+                extras={tableDataMain?.length - 1 !== r_i ? "border-b-2" : ""}
+              >
+                <Td>{tableDataMain?.length - 1 !== r_i ? r_i + 1 : ""}</Td>
                 <Td>{r}</Td>
-                <Td>12323</Td>
-                <Td>2345234</Td>
-                <Td>32435</Td>
-                {Alphabet?.map((alphabet:any, index:any) => {
-                  return(
-                    <Td key={index}>{alphabet}</Td>
-                  )
-                })}
+                <Td>10</Td>
+                <Td>8</Td>
+                <Td>2</Td>
+                <Td>7</Td>
+                <Td>3</Td>
               </Tr>
             );
           })}
@@ -88,4 +85,4 @@ function SectionStreamWiseStrengthReportList(props: {
   );
 }
 
-export default SectionStreamWiseStrengthReportList;
+export default GenderWiseStrengthReportList;

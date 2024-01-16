@@ -69,16 +69,18 @@ const Th = ({
     key,
     id,
     textalign = "start",
+    colspan,
     extras
 }: {
     children: React.ReactNode,
     id?: any,
     key?: any,
     textalign?:string,
+    colspan?:number,
     extras?:string
 }) => {
     return (
-        <th key={key} id={id} className={`${extras} border-b-[1px] border-gray-200 pt-4 pb-2 pr-4 text-${textalign} dark:border-[#ffffff33]`}>
+        <th colSpan={colspan ? colspan : 1} key={key} id={id} className={`${extras} border-b-[1px] border-gray-200 pt-4 pb-2 pr-4 text-${textalign} dark:border-[#ffffff33]`}>
             {children}
         </th>
     )

@@ -9,7 +9,7 @@ import {
   Tr,
 } from "../../../../../../components/table/Table";
 
-function SectionWiseStrengthReportList(props: {
+function SectionStreamWiseStrengthReportList(props: {
   tableData: any;
   tableName?: string;
 }) {
@@ -43,9 +43,9 @@ function SectionWiseStrengthReportList(props: {
         <div className="relative flex items-center justify-between pt-4">
           <p className="w-[250px] font-bold">Disc Code:</p>
           <h2 className="text-2xl font-bold dark:text-white text-center">
-            SECTION WISE STUDENT STRENGTH INFO
+            {tableName}
           </h2>
-          <p className="w-[250px] font-bold">School Code:</p>
+          <p className="w-[250px] font-bold flex flex-row-reverse"><span>: School Code</span><span></span></p>
         </div>
       </header>
 
@@ -69,7 +69,7 @@ function SectionWiseStrengthReportList(props: {
           {tableDataMain.map((r: any, r_i: number) => {
             return (
               <Tr extras={tableDataMain?.length - 1 === r_i ? "" : "border-b-2"} >
-                <Td>{tableDataMain?.length - 1 !== r_i ? r_i + 1 : ""}</Td>
+                <Td>{tableDataMain?.length - 1 === r_i ? ""  : r_i  + 1}</Td>
                 <Td>{r}</Td>
                 <Td>12323</Td>
                 <Td>2345234</Td>
@@ -88,4 +88,4 @@ function SectionWiseStrengthReportList(props: {
   );
 }
 
-export default SectionWiseStrengthReportList;
+export default SectionStreamWiseStrengthReportList;

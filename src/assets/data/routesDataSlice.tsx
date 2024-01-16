@@ -91,9 +91,38 @@ import UpdateEmployeeChildDetails from "../../views/admin/studentmanagement/stud
 import UpdateSiblingDetails from "../../views/admin/studentmanagement/studentmanagementPanel/updatesiblingdetails";
 import SectionWiseStrengthReport from "../../views/admin/studentmanagement/studentmanagementReports/sectionwisestrengthreport";
 import SectionStreamWiseStengthReport from "../../views/admin/studentmanagement/studentmanagementReports/sectionstreamwisestrengthreport";
-import OverallStudentStrengthInfoList from "../../views/admin/studentmanagement/studentmanagementReports/overallstudentstrengthinfo/components";
 import OverallStudentStrengthInfo from "../../views/admin/studentmanagement/studentmanagementReports/overallstudentstrengthinfo";
 import GenderWiseStrengthReport from "../../views/admin/studentmanagement/studentmanagementReports/genderwisestrengthreport";
+import ReligionWiseStrengthReport from "../../views/admin/studentmanagement/studentmanagementReports/religionwisestrengthreport";
+import ReligionWiseStrengthReport2 from "../../views/admin/studentmanagement/studentmanagementReports/religionwisestrengthreport2";
+import CategoryWiseStrengthReport from "../../views/admin/studentmanagement/studentmanagementReports/categorywisestrengthreport";
+import CategoryWiseStrengthReport2 from "../../views/admin/studentmanagement/studentmanagementReports/categorywisestrengthreport2";
+import StudentCasteWiseReport from "../../views/admin/studentmanagement/studentmanagementReports/studentcastewisereport";
+import StudentVillageWiseReport from "../../views/admin/studentmanagement/studentmanagementReports/studentvillagewisereport";
+import StudentBlockWiseReport from "../../views/admin/studentmanagement/studentmanagementReports/studentblockwisereport";
+import StudentAddressWiseReport from "../../views/admin/studentmanagement/studentmanagementReports/studentaddresswisereport";
+import NewRegistrationReports from "../../views/admin/studentmanagement/studentmanagementReports/newregistrationreports";
+import AgeWiseStrengthReport from "../../views/admin/studentmanagement/studentmanagementReports/agewisestrengthreport";
+import AgeWiseStrengthReport2 from "../../views/admin/studentmanagement/studentmanagementReports/agewisestrengthreport2";
+import StreamWiseCategoryReport from "../../views/admin/studentmanagement/studentmanagementReports/streamwisecategoryreport";
+import SiblingReport from "../../views/admin/studentmanagement/studentmanagementReports/siblingreport";
+import AddEmployee from "../../views/admin/employeemanagement/employeemanagementpanel/addemployee";
+import EmployeeList from "../../views/admin/employeemanagement/employeemanagementpanel/employeelist";
+import EmployeeDroppedList from "../../views/admin/employeemanagement/employeemanagementpanel/employeedropped";
+import EmployeeRfidAssign from "../../views/admin/employeemanagement/employeemanagementpanel/employeeRfidAssign";
+import EmployeeAttendanceRegister from "../../views/admin/employeemanagement/employeemanagementpanel/employeeattendanceregister";
+import UpdateEmployePhotoDocuments from "../../views/admin/employeemanagement/employeemanagementpanel/updateemployeephotodocuments";
+import UpdateEmployeeProfile from "../../views/admin/employeemanagement/employeemanagementpanel/updateemployeeprofile";
+import UpdateEmployeeSalaryInfo from "../../views/admin/employeemanagement/employeemanagementpanel/updateemployeesalaryinfo";
+import GenerateStudentID from "../../views/admin/idcardmanagement/idcardmanagementpanel/generatestudentid";
+import GenerateFatherID from "../../views/admin/idcardmanagement/idcardmanagementpanel/generatefatherid";
+import GenerateMotherID from "../../views/admin/idcardmanagement/idcardmanagementpanel/generatemotherid";
+import GenerateParentsCombineID from "../../views/admin/idcardmanagement/idcardmanagementpanel/generateparentscombineid";
+import GenerateGuardianID from "../../views/admin/idcardmanagement/idcardmanagementpanel/generateguardianid";
+import GenerateEmployeeID from "../../views/admin/idcardmanagement/idcardmanagementpanel/generateemployeeid";
+import GenerateStudentHostelID from "../../views/admin/idcardmanagement/idcardmanagementpanel/generatestudenthostelid";
+import GenerateBusID from "../../views/admin/idcardmanagement/idcardmanagementpanel/generatebusid";
+import FillStudentAttendance from "../../views/admin/attendancemanagement/studentattendancepanel/fillstudentattendance";
 
 const styleOne = {
   fontSize: "2.5em",
@@ -162,7 +191,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUsers2 />,
             icon2: <LuUsers2 style={styleOne} />,
             to: "/admin/student-management/student-admission-list",
-            component:<StudentAdmissionList/>,
+            component: <StudentAdmissionList />,
             modules: [],
           },
           {
@@ -170,7 +199,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "/admin/student-management/rfid-card-assign",
-            component: <RfidCardAssign/>,
+            component: <RfidCardAssign />,
             modules: [],
           },
           {
@@ -178,7 +207,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "/admin/student-management/set-fees-category",
-            component:<SetFeeCategory/>,
+            component: <SetFeeCategory />,
             modules: [],
           },
           {
@@ -186,7 +215,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "/admin/student-management/update-sms-whatsapp-contact",
-            component: <SMSWhatsappContactUpdate/>,
+            component: <SMSWhatsappContactUpdate />,
             modules: [],
           },
           {
@@ -194,7 +223,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "/admin/student-management/update-student-details",
-            component: <StudentProfileUpdate/>,
+            component: <StudentProfileUpdate />,
             modules: [],
           },
           {
@@ -202,7 +231,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "/admin/student-management/update-student-photo-document",
-            component:<StudentPhotoDocumentUpdate/>,
+            component: <StudentPhotoDocumentUpdate />,
             modules: [],
           },
           {
@@ -210,7 +239,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "/admin/student-management/update-class-details",
-            component:<SetClassInfoUpdate/>,
+            component: <SetClassInfoUpdate />,
             modules: [],
           },
           {
@@ -218,7 +247,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "/admin/student-management/promotion-demotion",
-            component: <PromotionDemotion/>,
+            component: <PromotionDemotion />,
             modules: [],
           },
           {
@@ -226,7 +255,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "/admin/student-management/student-left",
-            component:<StudentLeft/>,
+            component: <StudentLeft />,
             modules: [],
           },
           {
@@ -234,7 +263,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "/admin/student-management/update-student-admission-details",
-            component: <UpdateStudentAdmissionDetails/>,
+            component: <UpdateStudentAdmissionDetails />,
             modules: [],
           },
           {
@@ -242,7 +271,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "/admin/student-management/student-physical-fitness",
-            component:<StudentPhysicalFitness/>,
+            component: <StudentPhysicalFitness />,
             modules: [],
           },
           {
@@ -250,7 +279,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "/admin/student-management/student-medical-fitness",
-            component:<StudentMedicalFitness/>,
+            component: <StudentMedicalFitness />,
             modules: [],
           },
           {
@@ -258,7 +287,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUsers2 />,
             icon2: <LuUsers2 style={styleOne} />,
             to: "/admin/student-management/students-parents-and-behaviour",
-            component:<StudentsParentsBehaviour/>,
+            component: <StudentsParentsBehaviour />,
             modules: [],
           },
           {
@@ -274,7 +303,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "/admin/student-management/update-sibling-details",
-            component:<UpdateSiblingDetails/>,
+            component: <UpdateSiblingDetails />,
             modules: [],
           },
           {
@@ -305,11 +334,11 @@ const StudentManagementModules: CoreData[] | null = true
         title: "Student Reports Panel",
         nodes: [
           {
-            name: "Section Wise Strength Report", 
+            name: "Section Wise Strength Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
             to: "/admin/student-management/section-wise-strength-report",
-            component:<SectionWiseStrengthReport/>,
+            component: <SectionWiseStrengthReport />,
             modules: [],
           },
           {
@@ -317,7 +346,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
             to: "/admin/student-management/section-stream-wise-strength-report",
-            component:<SectionStreamWiseStengthReport/>,
+            component: <SectionStreamWiseStengthReport />,
             modules: [],
           },
           {
@@ -325,7 +354,7 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
             to: "/admin/student-management/overall-strength-report",
-            component:<OverallStudentStrengthInfo/>,
+            component: <OverallStudentStrengthInfo />,
             modules: [],
           },
           {
@@ -333,98 +362,111 @@ const StudentManagementModules: CoreData[] | null = true
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
             to: "/admin/student-management/gender-wise-strength-report",
-            component:<GenderWiseStrengthReport/>,
+            component: <GenderWiseStrengthReport />,
             modules: [],
           },
           {
             name: "Religion Wise Strength Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/religion-wise-strength-report",
+            component: <ReligionWiseStrengthReport />,
             modules: [],
           },
           {
             name: "Religion Wise Strength Report-2",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/religion-wise-strength-report-2",
+            component: <ReligionWiseStrengthReport2 />,
             modules: [],
           },
           {
             name: "Category Wise Strength Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/category-wise-strength-report",
+            component: <CategoryWiseStrengthReport />,
             modules: [],
           },
           {
             name: "Category Wise Strength Report-2",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/category-wise-strength-report-2",
+            component: <CategoryWiseStrengthReport2 />,
             modules: [],
           },
           {
             name: "Student Castewise Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/student-caste-wise-report",
+            component: <StudentCasteWiseReport />,
             modules: [],
           },
           {
             name: "Student Villagewise Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/student-village-wise-report",
+            component: <StudentVillageWiseReport />,
             modules: [],
           },
           {
             name: "Student Blockwise Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/student-block-city-wise-report",
+            component: <StudentBlockWiseReport />,
             modules: [],
           },
           {
             name: "Student Address Wise Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/student-address-wise-report",
+            component: <StudentAddressWiseReport />,
             modules: [],
           },
           {
             name: "New Registrations",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/new-registration-report",
+            component: <NewRegistrationReports />,
             modules: [],
           },
           {
             name: "Agewise List",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/age-wise-report",
+            component: <AgeWiseStrengthReport />,
             modules: [],
           },
           {
             name: "Agewise List-2",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/age-wise-report-2",
+            component: <AgeWiseStrengthReport2 />,
             modules: [],
           },
           {
             name: "Streamwise Category Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/stream-wise-category-report",
+            component: <StreamWiseCategoryReport />,
             modules: [],
           },
           {
             name: "Sibling Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/siblings-report",
+            component: <SiblingReport />,
             modules: [],
           },
         ],
@@ -547,7 +589,7 @@ const CertificateManagementModules: CoreData[] | null = true
           },
 
           {
-            name: "Student Of The Form",
+            name: "Student Of The Month Form",
             icon: <LuClipboardSignature />,
             icon2: <LuClipboardSignature style={styleOne} />,
             to: "",
@@ -666,7 +708,7 @@ const CertificateManagementModules: CoreData[] | null = true
             modules: [],
           },
           {
-            name: "Student Of The List",
+            name: "Student Of The Month List",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
             to: "",
@@ -696,64 +738,64 @@ const IdCardManagementModules: CoreData[] | null = true
             name: "Student ID Generate",
             icon: <PiIdentificationBadge />,
             icon2: <PiIdentificationBadge style={styleOne} />,
-            to: "",
-            component: <>sdf</>,
+            to: "/admin/id-card-management/generate-student-id",
+            component: <GenerateStudentID/>,
             modules: [],
           },
           {
             name: "Father ID Generate",
             icon: <PiIdentificationBadge />,
             icon2: <PiIdentificationBadge style={styleOne} />,
-            to: "",
-            component: <>sdf</>,
+            to: "/admin/id-card-management/generate-father-id",
+            component: <GenerateFatherID/>,
             modules: [],
           },
           {
             name: "Mother ID Generate",
             icon: <PiIdentificationBadge />,
             icon2: <PiIdentificationBadge style={styleOne} />,
-            to: "",
-            component: <>sdf</>,
+            to: "/admin/id-card-management/generate-mother-id",
+            component: <GenerateMotherID/>,
             modules: [],
           },
           {
             name: "Both Combine (Father Mother)",
             icon: <PiIdentificationCard />,
             icon2: <PiIdentificationCard style={styleOne} />,
-            to: "",
-            component: <>sdf</>,
+            to: "/admin/id-card-management/generate-parents-combine-id",
+            component: <GenerateParentsCombineID/>,
             modules: [],
           },
           {
             name: "Guardian ID Generate",
             icon: <PiIdentificationBadge />,
             icon2: <PiIdentificationBadge style={styleOne} />,
-            to: "",
-            component: <>sdf</>,
+            to: "/admin/id-card-management/generate-guardian-id",
+            component: <GenerateGuardianID/>,
             modules: [],
           },
           {
-            name: "Staff ID Generate",
+            name: "Employee ID Generate",
             icon: <LuUserCheck2 />,
             icon2: <LuUserCheck2 style={styleOne} />,
-            to: "",
-            component: <>sdf</>,
+            to: "/admin/id-card-management/generate-employee-id",
+            component: <GenerateEmployeeID/>,
             modules: [],
           },
           {
             name: "Hostel ID Card",
             icon: <PiIdentificationBadge />,
             icon2: <PiIdentificationBadge style={styleOne} />,
-            to: "",
-            component: <>sdf</>,
+            to: "/admin/id-card-management/generate-student-hostel-id",
+            component: <GenerateStudentHostelID/>,
             modules: [],
           },
           {
             name: "Bus ID Card",
             icon: <LuBus />,
             icon2: <LuBus style={styleOne} />,
-            to: "",
-            component: <>sdf</>,
+            to: "/admin/id-card-management/generate-bus-id",
+            component: <GenerateBusID/>,
             modules: [],
           },
         ],
@@ -771,7 +813,8 @@ const AttendanceManagementModules: CoreData[] | null = true
             name: "Student Attendance Fill",
             icon: <LuListChecks />,
             icon2: <LuListChecks style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/fill-student-attendance",
+            component:<FillStudentAttendance/>,
             modules: [],
           },
           {
@@ -799,17 +842,17 @@ const AttendanceManagementModules: CoreData[] | null = true
       },
       {
         _id: "attendance.management.section.02",
-        title: "Staff Attendance Panel",
+        title: "Employee Attendance Panel",
         nodes: [
           {
-            name: "Staff Attendance Fill",
+            name: "Employee Attendance Fill",
             icon: <LuListChecks />,
             icon2: <LuListChecks style={styleOne} />,
             to: "",
             modules: [],
           },
           {
-            name: "Staff Attendance List",
+            name: "Employee Attendance List",
             icon: <LuList />,
             icon2: <LuList style={styleOne} />,
             to: "",
@@ -829,7 +872,7 @@ const AttendanceManagementModules: CoreData[] | null = true
             modules: [],
           },
           {
-            name: "Staff RFID Management",
+            name: "Employee RFID Management",
             icon: <LuUserCheck2 />,
             icon2: <LuUserCheck2 style={styleOne} />,
             to: "",
@@ -843,7 +886,7 @@ const AttendanceManagementModules: CoreData[] | null = true
             modules: [],
           },
           {
-            name: "Staff RFID Machine",
+            name: "Employee RFID Machine",
             icon: <LuTablet />,
             icon2: <LuTablet style={styleOne} />,
             to: "",
@@ -908,7 +951,7 @@ const AttendanceManagementModules: CoreData[] | null = true
       },
       {
         _id: "attendance.management.section.05",
-        title: "Staff Attendance Report Panel",
+        title: "Employee Attendance Report Panel",
         nodes: [
           {
             name: "Employee Report (Category Wise)",
@@ -1032,21 +1075,21 @@ const LeaveManagementModules: CoreData[] | null = true
             modules: [],
           },
           {
-            name: "Staff Leave",
+            name: "Employee Leave",
             icon: <LuUser2 />,
             icon2: <LuUser2 style={styleOne} />,
             to: "",
             modules: [],
           },
           {
-            name: "Staff Leave List",
+            name: "Employee Leave List",
             icon: <LuList />,
             icon2: <LuList style={styleOne} />,
             to: "",
             modules: [],
           },
           {
-            name: "Staff Leave Balance",
+            name: "Employee Leave Balance",
             icon: <LuCalculator />,
             icon2: <LuCalculator style={styleOne} />,
             to: "",
@@ -1057,66 +1100,74 @@ const LeaveManagementModules: CoreData[] | null = true
     ]
   : null;
 
-const StaffManagementModules: CoreData[] | null = true
+const EmployeeManagementModules: CoreData[] | null = true
   ? [
       {
-        _id: "staff.management.section.01",
-        title: "Staff Management Panel",
+        _id: "Employee.management.section.01",
+        title: "Employee Management Panel",
         nodes: [
           {
-            name: "Add Staff",
+            name: "Add Employee",
             icon: <LuUserPlus2 />,
             icon2: <LuUserPlus2 style={styleOne} />,
-            to: "",
+            to: "/admin/employee-management/add-employee",
+            component: <AddEmployee />,
             modules: [],
           },
           {
-            name: "Staff List",
+            name: "Employee List",
             icon: <LuList />,
             icon2: <LuList style={styleOne} />,
-            to: "",
+            to: "/admin/employee-management/employee-list",
+            component: <EmployeeList />,
             modules: [],
           },
           {
             name: "Dropped List",
             icon: <LuUserX2 />,
             icon2: <LuUserX2 style={styleOne} />,
-            to: "",
+            to: "/admin/employee-management/dropped-employee-list",
+            component: <EmployeeDroppedList />,
             modules: [],
           },
           {
             name: "RFID Card Assign",
             icon: <LuTablet />,
             icon2: <LuTablet style={styleOne} />,
-            to: "",
+            to: "/admin/employee-management/employee-rfid-card-assign",
+            component: <EmployeeRfidAssign />,
             modules: [],
           },
           {
             name: "Attendance Register",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/employee-management/employee-attendance-register",
+            component: <EmployeeAttendanceRegister />,
             modules: [],
           },
           {
             name: "Photo And Document Update",
             icon: <LuUserSquare2 />,
             icon2: <LuUserSquare2 style={styleOne} />,
-            to: "",
+            to: "/admin/employee-management/update-employee-photo-document",
+            component: <UpdateEmployePhotoDocuments />,
             modules: [],
           },
           {
-            name: "Staff Profile Update",
+            name: "Employee Profile Update",
             icon: <LuUserCog2 />,
             icon2: <LuUserCog2 style={styleOne} />,
-            to: "",
+            to: "/admin/employee-management/update-employee-profile",
+            component:<UpdateEmployeeProfile/>,
             modules: [],
           },
           {
             name: "Salary Info Update",
             icon: <PiMoney />,
             icon2: <PiMoney style={styleOne} />,
-            to: "",
+            to: "/admin/employee-management/update-employee-salary-info",
+            component:<UpdateEmployeeSalaryInfo/>,
             modules: [],
           },
         ],
@@ -1284,7 +1335,7 @@ const TextAndWhatsappManagementModules: CoreData[] | null = true
             modules: [],
           },
           {
-            name: "Staff Whatsapp Message",
+            name: "Employee Whatsapp Message",
             icon: <TiMessages />,
             icon2: <TiMessages style={styleOne} />,
             to: "",
@@ -1558,7 +1609,7 @@ const BusVanManagementModules: CoreData[] | null = true
             modules: [],
           },
           {
-            name: "Bus Staff",
+            name: "Bus Employee",
             icon: <LuUsers2 />,
             icon2: <LuUsers2 style={styleOne} />,
             to: "",
@@ -1613,7 +1664,7 @@ const BusVanManagementModules: CoreData[] | null = true
             modules: [],
           },
           {
-            name: "Van Staff",
+            name: "Van Employee",
             icon: <LuUsers2 />,
             icon2: <LuUsers2 style={styleOne} />,
             to: "",
@@ -1992,7 +2043,7 @@ const ComplaintManagementModules: CoreData[] | null = true
         title: "Complaint Management Panel",
         nodes: [
           {
-            name: "Staff Complaint List By Parents",
+            name: "Employee Complaint List By Parents",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
             to: "",
@@ -2159,31 +2210,31 @@ const ApplicationManagementModules: CoreData[] | null = true
       },
       {
         _id: "application.management.section.03",
-        title: "Staff App Management",
+        title: "Employee App Management",
         nodes: [
           {
-            name: "Staff's App Rights",
+            name: "Employee's App Rights",
             icon: <IoPhonePortraitOutline />,
             icon2: <IoPhonePortraitOutline style={styleOne} />,
             to: "",
             modules: [],
           },
           {
-            name: "Staff's App Rights (Staff Wise)",
+            name: "Employee's App Rights (Employee Wise)",
             icon: <IoPhonePortraitOutline />,
             icon2: <IoPhonePortraitOutline style={styleOne} />,
             to: "",
             modules: [],
           },
           {
-            name: "Generate Staff's Password",
+            name: "Generate Employee's Password",
             icon: <LuEye />,
             icon2: <LuEye style={styleOne} />,
             to: "",
             modules: [],
           },
           {
-            name: "Update Staff's Password",
+            name: "Update Employee's Password",
             icon: <LuEye />,
             icon2: <LuEye style={styleOne} />,
             to: "",
@@ -2477,7 +2528,7 @@ const DownloadDataModules: CoreData[] | null = true
             modules: [],
           },
           {
-            name: "Staffs List",
+            name: "Employees List",
             icon: <LuDownload />,
             icon2: <LuDownload style={styleOne} />,
             to: "",
@@ -2491,7 +2542,7 @@ const DownloadDataModules: CoreData[] | null = true
             modules: [],
           },
           {
-            name: "Staffs Birthday List",
+            name: "Employees Birthday List",
             icon: <LuDownload />,
             icon2: <LuDownload style={styleOne} />,
             to: "",
@@ -2512,14 +2563,14 @@ const DownloadDataModules: CoreData[] | null = true
             modules: [],
           },
           {
-            name: "Staff's Documents List",
+            name: "Employee's Documents List",
             icon: <LuDownload />,
             icon2: <LuDownload style={styleOne} />,
             to: "",
             modules: [],
           },
           {
-            name: "Staff's Documents Downloadt",
+            name: "Employee's Documents Downloadt",
             icon: <LuDownload />,
             icon2: <LuDownload style={styleOne} />,
             to: "",
@@ -2558,7 +2609,7 @@ const RecyclebinManagementModules: CoreData[] | null = true
             modules: [],
           },
           {
-            name: "Staff List",
+            name: "Employee List",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
             to: "",
@@ -2847,91 +2898,91 @@ const modulesData: CoreData[] = [
             name: "Religion Wise Strength Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/religion-wise-strength-report",
             modules: [],
           },
           {
             name: "Religion Wise Strength Report-2",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/religion-wise-strength-report-2",
             modules: [],
           },
           {
             name: "Category Wise Strength Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/category-wise-strength-report",
             modules: [],
           },
           {
             name: "Category Wise Strength Report-2",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/category-wise-strength-report-2",
             modules: [],
           },
           {
             name: "Student Castewise Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/student-caste-wise-report",
             modules: [],
           },
           {
             name: "Student Villagewise Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/student-village-wise-report",
             modules: [],
           },
           {
             name: "Student Blockwise Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/student-block-city-wise-report",
             modules: [],
           },
           {
             name: "Student Address Wise Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/student-address-wise-report",
             modules: [],
           },
           {
             name: "New Registrations",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/new-registration-report",
             modules: [],
           },
           {
             name: "Agewise List",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/age-wise-report",
             modules: [],
           },
           {
             name: "Agewise List-2",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/age-wise-report-2",
             modules: [],
           },
           {
             name: "Streamwise Category Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/stream-wise-category-report",
             modules: [],
           },
           {
             name: "Sibling Report",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/student-management/siblings-report",
             modules: [],
           },
         ],
@@ -2966,7 +3017,64 @@ const modulesData: CoreData[] = [
             }}
           />
         ),
-        modules: [],
+        modules: [
+          {
+            name: "Student ID Generate",
+            icon: <PiIdentificationBadge />,
+            icon2: <PiIdentificationBadge style={styleOne} />,
+            to: "/admin/id-card-management/generate-student-id",
+            modules: [],
+          },
+          {
+            name: "Father ID Generate",
+            icon: <PiIdentificationBadge />,
+            icon2: <PiIdentificationBadge style={styleOne} />,
+            to: "/admin/id-card-management/generate-father-id",
+            modules: [],
+          },
+          {
+            name: "Mother ID Generate",
+            icon: <PiIdentificationBadge />,
+            icon2: <PiIdentificationBadge style={styleOne} />,
+            to: "/admin/id-card-management/generate-mother-id",
+            modules: [],
+          },
+          {
+            name: "Both Combine (Father Mother)",
+            icon: <PiIdentificationCard />,
+            icon2: <PiIdentificationCard style={styleOne} />,
+            to: "/admin/id-card-management/generate-parents-combine-id",
+            modules: [],
+          },
+          {
+            name: "Guardian ID Generate",
+            icon: <PiIdentificationBadge />,
+            icon2: <PiIdentificationBadge style={styleOne} />,
+            to: "/admin/id-card-management/generate-guardian-id",
+            modules: [],
+          },
+          {
+            name: "Employee ID Generate",
+            icon: <LuUserCheck2 />,
+            icon2: <LuUserCheck2 style={styleOne} />,
+            to: "/admin/id-card-management/generate-employee-id",
+            modules: [],
+          },
+          {
+            name: "Hostel ID Card",
+            icon: <PiIdentificationBadge />,
+            icon2: <PiIdentificationBadge style={styleOne} />,
+            to: "/admin/id-card-management/generate-student-hostel-id",
+            modules: [],
+          },
+          {
+            name: "Bus ID Card",
+            icon: <LuBus />,
+            icon2: <LuBus style={styleOne} />,
+            to: "/admin/id-card-management/generate-bus-id",
+            modules: [],
+          },
+        ],
       },
     ],
   },
@@ -3010,23 +3118,81 @@ const modulesData: CoreData[] = [
   },
   {
     _id: "section.04",
-    title: "Staff Management",
+    title: "Employee Management",
     nodes: [
       {
-        name: "Staff Management",
+        name: "Employee Management",
         icon: <LuUserCheck2 />,
         icon2: <LuUserCheck2 style={styleOne} />,
-        to: "/admin/staff-management",
+        to: "/admin/employee-management",
         component: (
           <RoutesLayout
             pageProps={{
-              pageName: "/staff-management",
-              data: StaffManagementModules,
+              pageName: "/Employee-management",
+              data: EmployeeManagementModules,
               type: "typeTwo",
             }}
           />
         ),
-        modules: [],
+        modules: [
+          {
+            name: "Add Employee",
+            icon: <LuUserPlus2 />,
+            icon2: <LuUserPlus2 style={styleOne} />,
+            to: "/admin/employee-management/add-employee",
+            modules: [],
+          },
+          {
+            name: "Employee List",
+            icon: <LuList />,
+            icon2: <LuList style={styleOne} />,
+            to: "/admin/employee-management/employee-list",
+            modules: [],
+          },
+          {
+            name: "Dropped List",
+            icon: <LuUserX2 />,
+            icon2: <LuUserX2 style={styleOne} />,
+            to: "/admin/employee-management/dropped-employee-list",
+            modules: [],
+          },
+          {
+            name: "RFID Card Assign",
+            icon: <LuTablet />,
+            icon2: <LuTablet style={styleOne} />,
+            to: "/admin/employee-management/employee-rfid-card-assign",
+            modules: [],
+          },
+          {
+            name: "Attendance Register",
+            icon: <LuClipboardList />,
+            icon2: <LuClipboardList style={styleOne} />,
+            to: "/admin/employee-management/employee-attendance-register",
+            modules: [],
+          },
+
+          {
+            name: "Photo And Document Update",
+            icon: <LuUserSquare2 />,
+            icon2: <LuUserSquare2 style={styleOne} />,
+            to: "/admin/employee-management/update-employee-photo-document",
+            modules: [],
+          },
+          {
+            name: "Employee Profile Update",
+            icon: <LuUserCog2 />,
+            icon2: <LuUserCog2 style={styleOne} />,
+            to: "/admin/employee-management/update-employee-profile",
+            modules: [],
+          },
+          {
+            name: "Salary Info Update",
+            icon: <PiMoney />,
+            icon2: <PiMoney style={styleOne} />,
+            to: "/admin/employee-management/update-employee-salary-info",
+            modules: [],
+          },
+        ],
       },
     ],
   },
@@ -3578,26 +3744,26 @@ const modulesData: CoreData[] = [
     ],
   },
   {
-    _id:"",
-    title:"time pass",
-    nodes:[
+    _id: "",
+    title: "time pass",
+    nodes: [
       {
-        name:"LP Marketplace",
-        icon:<></>,
-        icon2:<></>,
-        component:<Marketplace/>,
-        to:"/admin/lp-marketplace",
-        modules:[]
+        name: "LP Marketplace",
+        icon: <></>,
+        icon2: <></>,
+        component: <Marketplace />,
+        to: "/admin/lp-marketplace",
+        modules: [],
       },
       {
-        name:"profile",
-        icon:<></>,
-        icon2:<></>,
-        component:<ProfileOverview/>,
-        to:"/admin/profile"
-      }
-    ]
-  }
+        name: "profile",
+        icon: <></>,
+        icon2: <></>,
+        component: <ProfileOverview />,
+        to: "/admin/profile",
+      },
+    ],
+  },
 ];
 
 export const routesDataSlice = createSlice({

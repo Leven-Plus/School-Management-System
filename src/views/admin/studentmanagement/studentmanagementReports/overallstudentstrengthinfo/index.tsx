@@ -1,6 +1,5 @@
-import React from "react";
 import Card from "../../../../../components/card";
-import OverallStudentStrengthInfoList from "./components";
+import OverallStudentStrengthInfoList from "./components/OverallStudentStrengthInfoList";
 
 const ClassInfo = [
   "Pre School",
@@ -35,11 +34,11 @@ const OverallStudentStrengthInfo = () => {
     <>
       <Card className="rounded-xl bg-white dark:bg-navy-800 p-5 mb-5">
         <h2 className="text-2xl font-bold dark:text-white">
-          Section Stream Wise Strength Report
+          Overall Students Strength Report
         </h2>
         <OverallStudentStrengthInfoList
           tableData={ClassInfo}
-          tableName="Overall Student Strength Info"
+          tableName="OVERALL STUDENTS STRENGTH INFO"
         />
       </Card>
     </>

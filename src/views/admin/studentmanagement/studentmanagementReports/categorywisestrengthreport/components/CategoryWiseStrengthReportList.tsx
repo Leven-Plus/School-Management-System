@@ -9,7 +9,7 @@ import {
   Tr,
 } from "../../../../../../components/table/Table";
 
-function GenderWiseStrengthReportList(props: {
+function CategoryWiseStrengthReportList(props: {
   tableData: any;
   tableName?: string;
 }) {
@@ -41,43 +41,47 @@ function GenderWiseStrengthReportList(props: {
         <div className="relative flex items-center justify-between pt-4">
           <p className="w-[250px] font-bold">Disc Code:</p>
           <h2 className="text-2xl font-bold dark:text-white pl-2">
-            SECTION WISE STUDENT STRENGTH INFO
+            {tableName}
           </h2>
-          <p className="w-[250px] font-bold">School Code:</p>
+          <p className="w-[250px] font-bold flex flex-row-reverse"><span>: School Code</span><span></span></p>
         </div>
       </header>
 
       <Table tableExtras={`w-full`} overflowX="hidden">
         <THeade>
           <Tr>
+            <Th>{""}</Th>
+            <Th>{""}</Th>
+            <Th>{""}</Th>
+            <Th>{""}</Th>
+            <Th>{""}</Th>
+            <Th colspan={3}>New</Th>
+          </Tr>
+          <Tr>
             <Th>S No.</Th>
             <Th>Class Name</Th>
             <Th>Total Student</Th>
-            <Th>Old Student</Th>
-            <Th>New Student</Th>
-            <Th>Male</Th>
-            <Th>Female</Th>
+            <Th>Total Boys</Th>
+            <Th>Total Girls</Th>
+            <Th extras="border-l-2 pl-2">Boys</Th>
+            <Th>Girls</Th>
+            <Th>Total</Th>
           </Tr>
         </THeade>
 
         <TBody>
-          {tableDataMain.map((r: any, r_i: number) => {
+          {tableDataMain?.map((r: any, r_i: number) => {
             return (
-            <Tr>
-              <Td>
-              {tableDataMain?.length - 1 !== r_i ? r_i + 1 : ""}
-              </Td>
-              <Td>
-                {r}
-              </Td>
-              <Td>
-                10
-              </Td>
-              <Td>8</Td>
-              <Td>2</Td>
-              <Td>7</Td>
-              <Td>3</Td>
-            </Tr>
+                <Tr extras={tableDataMain?.length -1 !== r_i ? "border-b-2" : ""}>
+                  <Td extras="font-bold">{tableDataMain?.length - 1 !== r_i ? r_i + 1 : ""}</Td>
+                  <Td>{r}</Td>
+                  <Td>11</Td>
+                  <Td>11</Td>
+                  <Td>11</Td>
+                  <Td extras="border-l-2 pl-2">11</Td>
+                  <Td>11</Td>
+                  <Td>11</Td>
+                </Tr>
             );
           })}
         </TBody>
@@ -86,4 +90,4 @@ function GenderWiseStrengthReportList(props: {
   );
 }
 
-export default GenderWiseStrengthReportList;
+export default CategoryWiseStrengthReportList;

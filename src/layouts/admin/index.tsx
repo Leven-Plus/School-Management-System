@@ -16,7 +16,6 @@ export default function Admin(props: { [x: string]: any }) {
   pathNameArray?.shift();
   const { ...rest } = props;
   const [sideBarCompact, setSideBarCompact] = useState(false);
-
   const modules = useSelector((state: any) => state.routesData.value);
 
   const moduleRoutes: any = [];
@@ -60,16 +59,16 @@ export default function Admin(props: { [x: string]: any }) {
       }, 10);
     }
   }, [location]);
-
+  
   return (
     <div className="flex h-full w-full">
-      <LoadingBar
+      {/* <LoadingBar
         color="#422AFB"
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
         className="
         rounded-xl"
-      />
+      /> */}
       <SideBar setCompact={setSideBarCompact} compact={sideBarCompact}>
         {moduleRoutes?.map((link: any, index: number) => {
           return (

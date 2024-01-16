@@ -41,9 +41,10 @@ function OverallStudentStrengthInfoList(props: {
         <div className="relative flex items-center justify-between pt-4">
           <p className="w-[250px] font-bold">Disc Code:</p>
           <h2 className="text-2xl font-bold dark:text-white pl-2">
-            SECTION WISE STUDENT STRENGTH INFO
+            {tableName}
           </h2>
-          <p className="w-[250px] font-bold">School Code:</p>
+          <p className="w-[250px] font-bold flex flex-row-reverse"><span>: School Code</span><span></span></p>
+          
         </div>
       </header>
 
