@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import Card from "../../../../../../components/card";
 import CardMenu from "../../../../../../components/card/CardMenu";
+import Card from "../../../../../../components/card";
 import {
+  Pagenation,
   TBody,
   THeade,
   Table,
@@ -9,17 +10,9 @@ import {
   Th,
   Tr,
 } from "../../../../../../components/table/Table";
-import Button from "../../../../../../components/button/Button";
 import Spinner from "../../../../../../components/spinner/spinner";
-import { Select } from "@chakra-ui/react";
-import Checkbox from "../../../../../../components/checkbox";
-
-type ClassObj = {
-  ClassName: string;
-  ClassStrength: number;
-  BoysStrength: number;
-  GirlsStrength: number;
-};
+import Button from "../../../../../../components/button/Button";
+import { IoEyeOutline } from "react-icons/io5";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -29,10 +22,7 @@ function getWindowDimensions() {
   };
 }
 
-function FillAttendanceTable(props: {
-  tableData: any;
-  tableName?: string | ClassObj;
-}) {
+function AttendanceRegister(props: { tableData: any; tableName?: string }) {
   const { tableData: tableDataMain, tableName } = props;
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
@@ -82,6 +72,8 @@ function FillAttendanceTable(props: {
     }, 100);
   }, [perPagex]);
 
+  console.log(perPagex);
+
   return (
     <Card
       extra={
@@ -89,23 +81,8 @@ function FillAttendanceTable(props: {
       }
     >
       <header className="relative flex items-center justify-between pt-4">
-        <h2 className="text-2xl font-semibold dark:text-white mb-5">
-          {typeof tableName !== "string" ? (
-            <div className="w-[55em] flex justify-between items-center">
-              <span className="">{tableName?.ClassName} Attendance Register</span> 
-              <span className="">
-                Class Strength : {tableName?.ClassStrength}
-              </span>
-              <span className="">
-                Boys Strength : {tableName?.BoysStrength}
-              </span>
-              <span className="">
-                Girls Strength : {tableName?.GirlsStrength}
-              </span>
-            </div>
-          ) : (
-            <></>
-          )}
+        <h2 className="text-2xl font-bold dark:text-white">
+          {tableName ? tableName : "Table"}
         </h2>
         <CardMenu />
       </header>
@@ -115,13 +92,16 @@ function FillAttendanceTable(props: {
           <Tr>
             <Th>S No.</Th>
             <Th>Student ID</Th>
-            <Th>Class Roll No.</Th>
             <Th>Student Name</Th>
             <Th>Father Name</Th>
-            <Th>Student Attendance</Th>
-            <Th>Filled Attendance</Th>
+            <Th>Mother Name</Th>
             <Th>Class[Section]</Th>
-            <Th>Contact No.</Th>
+            <Th textalign="center ">Present</Th>
+            <Th textalign="center ">Absent</Th>
+            <Th>Leave</Th>
+            <Th>Sunday</Th>
+            <Th>Holiday</Th>
+            <Th>Not Mark</Th>
             <Th textalign={"center"}>Actions</Th>
           </Tr>
         </THeade>
@@ -132,17 +112,23 @@ function FillAttendanceTable(props: {
               <Tr>
                 <Td>{r_i + 1}</Td>
                 <Td>SFTIDSTD{r_i + 1}</Td>
-                <Td>{r_i}</Td>
                 <Td>Yogesh Maurya</Td>
                 <Td>Gautambhai Maurya</Td>
-                <Td><Select>
-                    <option value="Present">Present</option>
-                    </Select></Td>
-                <Td>{""}</Td>
-                <Td>Class 9-[A]</Td>
-                <Td>9998899988</Td>
-                <Td extras="flex gap-[10px] justify-center items-center">
-                  <Checkbox id={`${r_i}std`} /><label htmlFor={`${r_i}std`}>Select Student</label>
+                <Td>Nilaben Maurya</Td>
+                <Td>Class 3-[A]</Td>
+                <Td extras="text-center">5</Td>
+                <Td extras="text-center">1</Td>
+                <Td extras="text-center">1</Td>
+                <Td extras="text-center">1</Td>
+                <Td extras="text-center">1</Td>
+                <Td extras="text-center">1</Td>
+                <Td extras="flex gap-[10px] justify-center">
+                  <Button
+                    name={<IoEyeOutline/>}
+                    onCLick={() => console.log("clicked")}
+                    style="blue"
+                    extras=""
+                  />
                 </Td>
               </Tr>
             );
@@ -159,4 +145,4 @@ function FillAttendanceTable(props: {
   );
 }
 
-export default FillAttendanceTable;
+export default AttendanceRegister;
