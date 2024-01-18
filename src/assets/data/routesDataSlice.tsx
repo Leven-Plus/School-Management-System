@@ -125,6 +125,13 @@ import GenerateBusID from "../../views/admin/idcardmanagement/idcardmanagementpa
 import FillStudentAttendance from "../../views/admin/attendancemanagement/studentattendancepanel/fillstudentattendance";
 import StudentAttendanceList from "../../views/admin/attendancemanagement/studentattendancepanel/studentattendancelist";
 import StudentAttendanceGraphs from "../../views/admin/attendancemanagement/studentattendancepanel/attendancegraphs";
+import StudentAttendanceAndSms from "../../views/admin/attendancemanagement/studentattendancepanel/studentattendancesms";
+import FillEmployeeAttendance from "../../views/admin/attendancemanagement/employeeattendancepanel/fillemployeeattendance";
+import EmployeeAttendanceList from "../../views/admin/attendancemanagement/employeeattendancepanel/employeeattendancelist";
+import StudentRfidManagement from "../../views/admin/attendancemanagement/rfidattendancepanel/studentrfidmanagement";
+import StudentRfidMachine from "../../views/admin/attendancemanagement/rfidattendancepanel/studentrfidmachine";
+import EmployeeRfidMachine from "../../views/admin/attendancemanagement/rfidattendancepanel/employeerfidmachine";
+import RfidMachine from "../../views/admin/attendancemanagement/rfidattendancepanel/rfidmachines";
 
 const styleOne = {
   fontSize: "2.5em",
@@ -839,7 +846,8 @@ const AttendanceManagementModules: CoreData[] | null = true
             name: "Student ATT. & SMS",
             icon: <TiMessages />,
             icon2: <TiMessages style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/student-attendance-and-sms",
+            component:<StudentAttendanceAndSms/>,
             modules: [],
           },
         ],
@@ -852,14 +860,16 @@ const AttendanceManagementModules: CoreData[] | null = true
             name: "Employee Attendance Fill",
             icon: <LuListChecks />,
             icon2: <LuListChecks style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/fill-employee-attendance",
+            component:<FillEmployeeAttendance/>,
             modules: [],
           },
           {
             name: "Employee Attendance List",
             icon: <LuList />,
             icon2: <LuList style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/employee-attendance-list",
+            component:<EmployeeAttendanceList/>,
             modules: [],
           },
         ],
@@ -872,35 +882,39 @@ const AttendanceManagementModules: CoreData[] | null = true
             name: "Students RFID Management",
             icon: <LuUsers2 />,
             icon2: <LuUsers2 style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/student-rfid-management",
+            component:<StudentRfidManagement/>,
             modules: [],
           },
           {
             name: "Employee RFID Management",
             icon: <LuUserCheck2 />,
             icon2: <LuUserCheck2 style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/employee-rfid-management",
             modules: [],
           },
           {
             name: "Student RFID Machine",
             icon: <LuTablet />,
             icon2: <LuTablet style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/student-rfid-machine",
+            component:<StudentRfidMachine/>,
             modules: [],
           },
           {
             name: "Employee RFID Machine",
             icon: <LuTablet />,
             icon2: <LuTablet style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/employee-rfid-machine",
+            component:<EmployeeRfidMachine/>,
             modules: [],
           },
           {
             name: "Data Received From RFID Machine",
             icon: <LuDatabase />,
             icon2: <LuDatabase style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/data-received-from-rfid-machine",
+            component:<RfidMachine/>,
             modules: [],
           },
         ],
