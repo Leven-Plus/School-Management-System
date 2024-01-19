@@ -26,6 +26,21 @@
     />
   </fieldset>
 
+     <fieldset className="border-[2px] p-2 rounded-lg dark:border-navy-200">
+            <legend
+              id="classXyz"
+              className="text-xl text-navy-700 dark:text-white px-1.5"
+            >
+              Select Date<span className="text-red-500">*</span>
+            </legend>
+            <input
+              type="date"
+              name=""
+              id=""
+              className="w-full focus:outline-none"
+            />
+          </fieldset>
+
   <fieldset className="border-[2px] p-2 rounded-lg dark:border-navy-200">
     <legend className="text-xl text-navy-700 dark:text-white px-1.5">
       Student Address Line 2<span className="text-red-500">*</span>
