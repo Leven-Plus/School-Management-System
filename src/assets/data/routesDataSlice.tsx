@@ -132,6 +132,13 @@ import StudentRfidManagement from "../../views/admin/attendancemanagement/rfidat
 import StudentRfidMachine from "../../views/admin/attendancemanagement/rfidattendancepanel/studentrfidmachine";
 import EmployeeRfidMachine from "../../views/admin/attendancemanagement/rfidattendancepanel/employeerfidmachine";
 import RfidMachine from "../../views/admin/attendancemanagement/rfidattendancepanel/rfidmachines";
+import StudentAttendanceReportClassWise from "../../views/admin/attendancemanagement/studentsattendancereportpanel/studentattendancereportclasswise";
+import StudentAttendanceReportGenderWise from "../../views/admin/attendancemanagement/studentsattendancereportpanel/dailystudentreportgenderwise";
+import StudentWiseAttendanceReport from "../../views/admin/attendancemanagement/studentsattendancereportpanel/studentwiseattendancereport";
+import EmployeeRfidManagement from "../../views/admin/attendancemanagement/rfidattendancepanel/employeerfidmanagement";
+import DayWiseStudentMonthlyAttendance from "../../views/admin/attendancemanagement/studentsattendancereportpanel/daywisestudentmonthlyattendance";
+import DayWiseWithTimeStudentMonthlyAttendance from "../../views/admin/attendancemanagement/studentsattendancereportpanel/withtimestudentmonthlyattendance";
+import StudentAttendanceAnnually from "../../views/admin/attendancemanagement/studentsattendancereportpanel/studentattendanceannually";
 
 const styleOne = {
   fontSize: "2.5em",
@@ -891,6 +898,7 @@ const AttendanceManagementModules: CoreData[] | null = true
             icon: <LuUserCheck2 />,
             icon2: <LuUserCheck2 style={styleOne} />,
             to: "/admin/attendance-management/employee-rfid-management",
+            component:<EmployeeRfidManagement/>,
             modules: [],
           },
           {
@@ -927,42 +935,48 @@ const AttendanceManagementModules: CoreData[] | null = true
             name: "Student Report (Class Wise)",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/student-report-class-wise",
+            component:<StudentAttendanceReportClassWise/>,
             modules: [],
           },
           {
             name: "Daily Student Report (Gender Wise)",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/daily-student-report-gender-wise",
+            component:<StudentAttendanceReportGenderWise/>,
             modules: [],
           },
           {
             name: "Attendance Report (Student Wise)",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/attendance-report-student-wise",
+            component:<StudentWiseAttendanceReport/>,
             modules: [],
           },
           {
             name: "Student Attendance Monthly (Day Wise)",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/student-attendance-monthly-day-wise",
+            component:<DayWiseStudentMonthlyAttendance/>,
             modules: [],
           },
           {
             name: "Student Attendance Annually",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/student-attendance-annually",
+            component:<StudentAttendanceAnnually/>,
             modules: [],
           },
           {
             name: "Student Attendance Monthly (With Time)",
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
-            to: "",
+            to: "/admin/attendance-management/student-attendance-monthly-with-time",
+            component:<DayWiseWithTimeStudentMonthlyAttendance/>,
             modules: [],
           },
         ],
