@@ -15,8 +15,8 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-} from "@chakra-ui/react";
-import { LuArrowLeft } from "react-icons/lu";
+} from "@chakra-ui/react"; 
+import { LuChevronLeft } from "react-icons/lu";
 
 const Navbar = (props: { onOpenSidenav: () => void; brandText: string }) => {
   const { onOpenSidenav, brandText } = props;
@@ -79,7 +79,7 @@ const Navbar = (props: { onOpenSidenav: () => void; brandText: string }) => {
           >
             {pathName !== "/admin" && <span
             >
-              <LuArrowLeft style={{fontSize: "0.9em", marginRight: "0.1em"}} className="text-brand-500 dark:text-white" />
+              <LuChevronLeft style={{fontSize: "0.9em", marginRight: "0.1em"}} className="text-brand-500 dark:text-white" />
             </span>}
             {brandText}
           </Link>
