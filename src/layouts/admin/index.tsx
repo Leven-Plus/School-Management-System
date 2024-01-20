@@ -7,10 +7,9 @@ import Footer from "../../components/footer/Footer";
 import { useSelector } from "react-redux";
 import { LuShoppingBag, LuUserCog2 } from "react-icons/lu";
 import RoutesLayout from "../RoutesLayout";
-import LoadingBar from "react-top-loading-bar";
 
 export default function Admin(props: { [x: string]: any }) {
-  const [progress, setProgress] = useState(0);
+  const [, setProgress] = useState(0);
   const location = useLocation();
   const pathNameArray = location?.pathname?.split("/");
   pathNameArray?.shift();
