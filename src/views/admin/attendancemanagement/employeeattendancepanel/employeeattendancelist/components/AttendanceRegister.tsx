@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import CardMenu from "../../../../../../components/card/CardMenu";
 import Card from "../../../../../../components/card";
 import {
-  Pagenation,
   TBody,
   THeade,
   Table,
@@ -24,12 +23,12 @@ function getWindowDimensions() {
 
 function AttendanceRegister(props: { tableData: any; tableName?: string }) {
   const { tableData: tableDataMain, tableName } = props;
-  const [data, setData] = useState([]);
-  const [page, setPage] = useState(1);
+  const [, setData] = useState([]);
+  const [page, ] = useState(1);
   const [perPagex, setPerPage] = useState(
     Math.round(getWindowDimensions()?.height - 390 / 64)
   );
-  const [totalPagex, setTotalPage] = useState(0);
+  const [, setTotalPage] = useState(0);
 
   const [loadOrders, setLoadOrders] = useState(false);
 
@@ -106,7 +105,7 @@ function AttendanceRegister(props: { tableData: any; tableName?: string }) {
         <TBody>
           {tableDataMain.map((r: any, r_i: number) => {
             return (
-              <Tr>
+              <Tr key={r}>
                 <Td>{r_i + 1}</Td>
                 <Td>EMP23{r_i + 1}</Td>
                 <Td>Kriti Patel</Td>
