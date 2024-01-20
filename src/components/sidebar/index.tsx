@@ -1,7 +1,4 @@
-/* eslint-disable */
-
 import { AnimatePresence, motion } from "framer-motion";
-import { BsListNested } from "react-icons/bs";
 import { LuMenu } from "react-icons/lu";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
