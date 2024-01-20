@@ -1,0 +1,18 @@
+const ClassesInfo = [
+  "PRE SCHOOL",
+  "NURSERY",
+  "LKG",
+  "UKG",
+  "1ST [A,B]",
+  "2ND [A,B,C,D]",
+  "3RD [A,B,C]",
+  "4TH [A]",
+  "5TH [A,B]",
+  "6TH [A]",
+  "7TH [A,B]",
+  "8TH [A,B,C]",
+  "9TH [A,B,C,D]",
+  "10TH [A]",
+  "11TH [A,B,C,D,E]",
+  "12TH [A,B,C,D,E,F]",
+];
