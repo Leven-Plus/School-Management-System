@@ -11,18 +11,23 @@ import {
   IoMdInformationCircleOutline,
 } from "react-icons/io";
 import avatar from "../../assets/img/avatars/avatar11.png";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-} from "@chakra-ui/react"; 
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import { LuChevronLeft } from "react-icons/lu";
+import Keybinding from "react-keybinding-component";
 
-const Navbar = (props: { onOpenSidenav: () => void; brandText: string }) => {
+const Navbar = (props: {
+  onOpenSidenav: () => void;
+  brandText: string;
+  searchOnClick: any;
+}) => {
   const { onOpenSidenav, brandText } = props;
   const [darkmode, setDarkmode] = React.useState(false);
 
   let [headerStick, setHeaderStick] = useState(false);
+
+  function toggleTrue() {
+    props.searchOnClick(true);
+  }
 
   const scrollHeaderEvent = (e: Event) => {
     const window = e.currentTarget as Window;
@@ -63,6 +68,16 @@ const Navbar = (props: { onOpenSidenav: () => void; brandText: string }) => {
         headerStick ? "border-[#ffffff33] " : ""
       }`}
     >
+      <Keybinding
+        onKey={(e) => {
+          e.preventDefault();
+          if (e.ctrlKey && e.code === "KeyK") {
+            toggleTrue();
+          }
+        }}
+        type="keydown"
+        target={window}
+      />
       <div className="ml-[12px]">
         <p
           className="shrink text-[33px] capitalize text-navy-700 dark:text-white"
@@ -77,10 +92,14 @@ const Navbar = (props: { onOpenSidenav: () => void; brandText: string }) => {
               }
             }}
           >
-            {pathName !== "/admin" && <span
-            >
-              <LuChevronLeft style={{fontSize: "0.9em", marginRight: "0.1em"}} className="text-brand-500 dark:text-white" />
-            </span>}
+            {pathName !== "/admin" && (
+              <span>
+                <LuChevronLeft
+                  style={{ fontSize: "0.9em", marginRight: "0.1em" }}
+                  className="text-brand-500 dark:text-white"
+                />
+              </span>
+            )}
             {brandText}
           </Link>
         </p>
@@ -110,11 +129,24 @@ const Navbar = (props: { onOpenSidenav: () => void; brandText: string }) => {
           <p className="pl-3 pr-2 text-xl">
             <FiSearch className="h-4 w-4 text-gray-400 dark:text-white" />
           </p>
-          <input
-            type="text"
-            placeholder="Search..."
-            className="block h-full w-full rounded-full bg-lightPrimary text-sm font-medium text-navy-700 outline-none placeholder:!text-gray-400 dark:bg-navy-900 dark:text-white dark:placeholder:!text-white sm:w-fit"
-          />
+          <div className="flex">
+            <input
+              type="text"
+              placeholder="Search..."
+              onClick={() =>
+                props.searchOnClick(true)
+                  ? () => props.searchOnClick(true)
+                  : () => {}
+              }
+              className="block h-full w-full rounded-full bg-lightPrimary text-sm font-medium text-navy-700 outline-none placeholder:!text-gray-400 dark:bg-navy-900 dark:text-white dark:placeholder:!text-white sm:w-fit"
+            />
+            <div
+              className="text-navy-700 rounded-lg bg-[#fff] px-2 py-1 text-[0.7em] uppercase transition duration-200 dark:bg-white/10 dark:text-white translate-x-[-22.5px]"
+              style={{ letterSpacing: "0.01em" }}
+            >
+              ^K
+            </div>
+          </div>
         </div>
         <span
           className="flex cursor-pointer text-xl text-gray-600 dark:text-white xl:hidden"
