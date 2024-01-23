@@ -105,7 +105,7 @@ function UpdateEmployeeChildDetailsList(props: {
         <TBody>
           {data.map((r: any, r_i: number) => {
             return (
-              <Tr>
+              <Tr key={r}>
                 <Td>{r_i + 1}</Td>
                 <Td>STD{r_i + 1}</Td>
                 <Td>Arpan Patel</Td>

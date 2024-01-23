@@ -4,20 +4,18 @@ import Card from "../../../../../components/card";
 import FillAttendanceTable from "./components/FillAttendanceTable";
 import DropdownAlt from "../../../../../components/dropdown/index_alt";
 import { useState } from "react";
-import { BsThreeDots, BsThreeDotsVertical } from "react-icons/bs";
-import { RiEnglishInput } from "react-icons/ri";
 import { IoLanguage } from "react-icons/io5";
 
 const FillStudentAttendance = () => {
   const currentDate = new Date();
   const [open, setOpen] = useState(false);
-  const transparent =false;
-  
+  const transparent = false;
+
   return (
     <>
       <Card className="rounded-xl bg-white dark:bg-navy-800 p-5 mb-5">
         <h2 className="text-2xl font-bold dark:text-white">
-          Find Attendance Register
+          Find Student Attendance Register
         </h2>
         <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-5">
           <fieldset className="border-[2px] p-2 rounded-lg dark:border-navy-200">
@@ -100,7 +98,7 @@ const FillStudentAttendance = () => {
             </select>
           </fieldset>
         </div>
-        <fieldset className="border-0 pt-4 rounded-lg">
+        <fieldset className="border-0 pt-4 rounded-lg flex justify-end">
           <Button
             name={<span>Fill Attendance</span>}
             onCLick={() => console.log("clicked")}
@@ -125,50 +123,51 @@ const FillStudentAttendance = () => {
         }}
       />
       <Card className="rounded-xl bg-white dark:bg-navy-800 p-5 mb-5">
-        <header className="relative flex items-center justify-between pt-4">
+        <header className="relative flex items-center justify-between">
           <h2 className="text-2xl font-bold dark:text-white">
-            Find Class & Update Details
+            Attendance Message Panel
           </h2>
           <DropdownAlt
-      open={open}
-      setOpen={setOpen}
-      button={
-        <button
-          className={`flex items-center text-xl hover:cursor-pointer ${
-            transparent
-              ? "bg-none text-white hover:bg-none active:bg-none"
-              : "bg-lightPrimary p-2 text-brand-500 hover:bg-gray-100 dark:bg-navy-700 dark:text-white dark:hover:bg-white/20 dark:active:bg-white/10"
-          } linear justify-center rounded-lg font-bold transition duration-200`}
-        >
-          <IoLanguage className="h-6 w-6" />
-        </button>
-      }
-      animation={"origin-top-right transition-all duration-300 ease-in-out"}
-      classNames={`${transparent ? "top-8" : "top-11"} right-0 w-max`}
-      children={
-        <div className="z-50 w-max rounded-xl bg-white py-3 px-4 text-sm shadow-xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
-          <p
-            className="hover:text-black flex cursor-pointer items-center gap-2 text-gray-600 hover:text-gray-300"
-            onClick={() => setOpen(false)}
-          >
-        
-            English
-          </p>
-          <p
-            className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:text-gray-300"
-            onClick={() => setOpen(false)}
-          >
-            Gujarati
-          </p>
-          <p
-            className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:text-gray-300"
-            onClick={() => setOpen(false)}
-          >
-            Hindi
-          </p>
-        </div>
-      }
-    />
+            open={open}
+            setOpen={setOpen}
+            button={
+              <button
+                className={`flex items-center text-xl hover:cursor-pointer ${
+                  transparent
+                    ? "bg-none text-white hover:bg-none active:bg-none"
+                    : "bg-lightPrimary p-2 text-brand-500 hover:bg-gray-100 dark:bg-navy-700 dark:text-white dark:hover:bg-white/20 dark:active:bg-white/10"
+                } linear justify-center rounded-lg font-bold transition duration-200`}
+              >
+                <IoLanguage className="h-6 w-6" />
+              </button>
+            }
+            animation={
+              "origin-top-right transition-all duration-300 ease-in-out"
+            }
+            classNames={`${transparent ? "top-8" : "top-11"} right-0 w-max`}
+            children={
+              <div className="z-50 w-max rounded-xl bg-white py-3 px-4 text-sm shadow-xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+                <p
+                  className="hover:text-black flex cursor-pointer items-center gap-2 text-gray-600 hover:text-gray-300"
+                  onClick={() => setOpen(false)}
+                >
+                  English
+                </p>
+                <p
+                  className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:text-gray-300"
+                  onClick={() => setOpen(false)}
+                >
+                  Gujarati
+                </p>
+                <p
+                  className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:text-gray-300"
+                  onClick={() => setOpen(false)}
+                >
+                  Hindi
+                </p>
+              </div>
+            }
+          />
         </header>
         <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4">
           <fieldset className="border-[2px] p-2 rounded-lg dark:border-navy-200">

@@ -71,7 +71,8 @@ const Navbar = (props: {
       <Keybinding
         onKey={(e) => {
           e.preventDefault();
-          if (e.ctrlKey && e.code === "KeyK") {
+          console.log(e.code);
+          if (e.code === "Slash") {
             toggleTrue();
           }
         }}
@@ -129,7 +130,7 @@ const Navbar = (props: {
           <p className="pl-3 pr-2 text-xl">
             <FiSearch className="h-4 w-4 text-gray-400 dark:text-white" />
           </p>
-          <div className="flex">
+          <div className="flex items-center">
             <input
               type="text"
               placeholder="Search..."
@@ -141,10 +142,10 @@ const Navbar = (props: {
               className="block h-full w-full rounded-full bg-lightPrimary text-sm font-medium text-navy-700 outline-none placeholder:!text-gray-400 dark:bg-navy-900 dark:text-white dark:placeholder:!text-white sm:w-fit"
             />
             <div
-              className="text-navy-700 rounded-lg bg-[#fff] px-2 py-1 text-[0.7em] uppercase transition duration-200 dark:bg-white/10 dark:text-white translate-x-[-22.5px]"
+              className="text-navy-700 rounded-lg bg-[#fff] px-2 py-1 text-[0.7em] uppercase transition duration-200 dark:bg-white/10 dark:text-white translate-x-[-15px]"
               style={{ letterSpacing: "0.01em" }}
             >
-              ^K
+              /
             </div>
           </div>
         </div>

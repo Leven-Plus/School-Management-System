@@ -21,12 +21,12 @@ function getWindowDimensions() {
 
 function RfidMachineData(props: { tableData: any; tableName?: string }) {
   const { tableData: tableDataMain, tableName } = props;
-  const [data, setData] = useState([]);
-  const [page, setPage] = useState(1);
+  const [, setData] = useState([]);
+  const [page, ] = useState(1);
   const [perPagex, setPerPage] = useState(
     Math.round(getWindowDimensions()?.height - 390 / 64)
   );
-  const [totalPagex, setTotalPage] = useState(0);
+  const [, setTotalPage] = useState(0);
 
   const [loadOrders, setLoadOrders] = useState(false);
 
@@ -102,7 +102,7 @@ function RfidMachineData(props: { tableData: any; tableName?: string }) {
           {tableDataMain.map((r: any, r_i: number) => {
               if (r_i % 2 === 0) {
                 return (
-                  <Tr extras="border-b-2">
+                  <Tr key={r} extras="border-b-2">
                     <Td extras="pl-3">{r_i + 1}</Td>
                     <Td>SFTIDRFID{r_i + 1}</Td>
                     <Td>Yougesh Maurya</Td>

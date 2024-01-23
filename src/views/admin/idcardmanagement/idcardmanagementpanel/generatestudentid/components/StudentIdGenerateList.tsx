@@ -11,7 +11,6 @@ import {
   Tr,
 } from "../../../../../../components/table/Table";
 import Spinner from "../../../../../../components/spinner/spinner";
-import Button from "../../../../../../components/button/Button";
 import Checkbox from "../../../../../../components/checkbox";
 
 function getWindowDimensions() {
@@ -103,7 +102,7 @@ function StudentIdGenerateList(props: { tableData: any; tableName?: string }) {
         <TBody>
           {data.map((r: any, r_i: number) => {
             return (
-              <Tr>
+              <Tr key={r}>
                 <Td>{r_i + 1}</Td>
                 <Td>SFTIDSTD{r_i + 1}</Td>
                 <Td>12323</Td>

@@ -1,6 +1,6 @@
 import Card from "../../../../../../components/card";
+import CardMenu from "../../../../../../components/card/CardMenu";
 import {
-  Pagenation,
   TBody,
   THeade,
   Table,
@@ -17,6 +17,12 @@ function TotalStudentStateTable() {
         "w-full h-fit sm:overflow-auto rounded-xl bg-white dark:bg-navy-800 px-5 my-5 border-0"
       }
     >
+       <header className="relative flex items-center justify-between pt-4">
+        <h2 className="text-2xl font-bold dark:text-white">
+          Todays Total Attendance
+        </h2>
+        <CardMenu />
+      </header>
       <Table tableExtras="w-full">
         <THeade>
           <Tr extras="border-b-2">

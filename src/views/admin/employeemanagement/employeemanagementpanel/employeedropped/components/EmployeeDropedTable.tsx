@@ -105,7 +105,7 @@ function EmployeeDropedTable(props: { tableData: any; tableName?: string }) {
         <TBody>
           {data.map((r: any, r_i: number) => {
             return (
-              <Tr>
+              <Tr key={r}>
                 <Td>{r_i + 1}</Td>
                 <Td>EMP{r_i + 1}</Td>
                 <Td>9998868222</Td>

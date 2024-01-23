@@ -4,9 +4,14 @@ import Widget from "../../../../components/widget/Widget";
 const widgetLayout = ({ modules }: { modules: any }) => {
   const Navigate = useNavigate();
 
+
+
   return (
     <>
       {modules?.map((item: any, index: number) => {
+        //const num = getRandomNumber()
+        //console.log(num);
+        
         return (
           <Widget
             key={index}
@@ -19,6 +24,9 @@ const widgetLayout = ({ modules }: { modules: any }) => {
                 pathname: item?.to,
               });
             }}
+            //bg={colors[getRandomNumber()]}
+           // titleColor={`text-gray-800`}
+           // subTitleColor={`text-gray-800`}
           />
         );
       })}

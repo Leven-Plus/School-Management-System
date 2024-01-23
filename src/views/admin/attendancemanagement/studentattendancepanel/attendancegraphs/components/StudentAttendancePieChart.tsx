@@ -7,7 +7,7 @@ const StudentAttendancePieChart = () => {
       <div className="flex flex-row justify-between px-3 pt-2">
         <div>
           <h4 className="text-lg font-bold text-navy-700 dark:text-white">
-            Your Pie Chart
+            Total Attendance Report
           </h4>
         </div>
 
@@ -20,11 +20,11 @@ const StudentAttendancePieChart = () => {
         </div>
       </div>
 
-      <div className="mb-auto flex h-[220px] w-full items-center justify-center">
+      <div className="mb-auto flex h-[245px] w-full items-center justify-center">
         <PieChart
           chartOptions={{
-            labels: ["Your files", "System", "Empty"],
-            colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+            labels: ["Present", "Absent", "Not Marked"],
+            colors: ["#232323", "#232323", "#232323"],
             chart: {
               width: "50px",
             },
@@ -53,7 +53,10 @@ const StudentAttendancePieChart = () => {
               },
             },
             fill: {
-              colors: ["#4318FF", "#6AD2FF", "#EFF4FB"],
+              colors: [
+                "#6366f1", 
+                "#3b82f6", 
+                "#f59e0b"],
             },
             tooltip: {
               enabled: true,
@@ -65,14 +68,14 @@ const StudentAttendancePieChart = () => {
               },
             },
           }}
-          chartData={[63, 25, 12]}
+          chartData={[65, 25, 10]}
         />
       </div>
       <div className="flex flex-row !justify-between rounded-2xl px-6 py-3 shadow-2xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
         <div className="flex flex-col items-center justify-center">
           <div className="flex items-center justify-center">
-            <div className="h-2 w-2 rounded-full bg-brand-500" />
-            <p className="ml-1 text-sm font-normal text-gray-600">Your Files</p>
+            <div className="h-2 w-2 rounded-full bg-indigo-500" />
+            <p className="ml-1 text-sm font-normal text-gray-600">Present</p>
           </div>
           <p className="mt-px text-xl font-bold text-navy-700  dark:text-white">
             63%
@@ -83,8 +86,20 @@ const StudentAttendancePieChart = () => {
 
         <div className="flex flex-col items-center justify-center">
           <div className="flex items-center justify-center">
-            <div className="h-2 w-2 rounded-full bg-[#6AD2FF]" />
-            <p className="ml-1 text-sm font-normal text-gray-600">System</p>
+            <div className="h-2 w-2 rounded-full bg-blue-500" />
+            <p className="ml-1 text-sm font-normal text-gray-600">Absent</p>
+          </div>
+          <p className="mt-px text-xl font-bold text-navy-700 dark:text-white">
+            25%
+          </p>
+        </div>
+
+        <div className="h-11 w-px bg-gray-300 dark:bg-white/10" />
+
+        <div className="flex flex-col items-center justify-center">
+          <div className="flex items-center justify-center">
+            <div className="h-2 w-2 rounded-full bg-orange-500" />
+            <p className="ml-1 text-sm font-normal text-gray-600">N/M</p>
           </div>
           <p className="mt-px text-xl font-bold text-navy-700 dark:text-white">
             25%

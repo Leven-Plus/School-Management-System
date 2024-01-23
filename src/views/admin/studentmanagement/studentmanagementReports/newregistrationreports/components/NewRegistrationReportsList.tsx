@@ -74,7 +74,7 @@ function NewRegistrationReportsList(props: {
         <TBody>
           {tableDataMain.map((r: any, r_i: number) => {
             return (
-             <Tr>
+             <Tr key={r}>
               <Td>{r_i + 1}</Td>
               <Td>Active</Td>
               <Td>23123</Td>

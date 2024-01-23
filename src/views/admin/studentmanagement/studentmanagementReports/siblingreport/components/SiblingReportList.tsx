@@ -71,7 +71,7 @@ function SiblingReportList(props: {
         <TBody>
           {tableDataMain.map((r: any, r_i: number) => {
             return (
-             <Tr>
+             <Tr key={r}>
                 <Td>{r_i + 1}</Td>
                 <Td>234324324324</Td>
                 <Td>Ram Dubey</Td>

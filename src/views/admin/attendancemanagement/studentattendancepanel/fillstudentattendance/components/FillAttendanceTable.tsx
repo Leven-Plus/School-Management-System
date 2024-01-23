@@ -9,7 +9,6 @@ import {
   Th,
   Tr,
 } from "../../../../../../components/table/Table";
-import Button from "../../../../../../components/button/Button";
 import Spinner from "../../../../../../components/spinner/spinner";
 import { Select } from "@chakra-ui/react";
 import Checkbox from "../../../../../../components/checkbox";
@@ -34,12 +33,12 @@ function FillAttendanceTable(props: {
   tableName?: string | ClassObj;
 }) {
   const { tableData: tableDataMain, tableName } = props;
-  const [data, setData] = useState([]);
-  const [page, setPage] = useState(1);
+  const [, setData] = useState([]);
+  const [page, ] = useState(1);
   const [perPagex, setPerPage] = useState(
     Math.round(getWindowDimensions()?.height - 390 / 64)
   );
-  const [totalPagex, setTotalPage] = useState(0);
+  const [, setTotalPage] = useState(0);
 
   const [loadOrders, setLoadOrders] = useState(false);
 
@@ -129,7 +128,7 @@ function FillAttendanceTable(props: {
         <TBody>
           {tableDataMain.map((r: any, r_i: number) => {
             return (
-              <Tr>
+              <Tr key={r}>
                 <Td>{r_i + 1}</Td>
                 <Td>SFTIDSTD{r_i + 1}</Td>
                 <Td>{r_i}</Td>

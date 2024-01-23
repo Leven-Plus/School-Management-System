@@ -1,6 +1,7 @@
 import Card from "../../../../../components/card";
 import ClassWiseAttendanceReport from "./components/ClassWiseAttendanceReport";
 import StudentAttendancePieChart from "./components/StudentAttendancePieChart";
+import TotalStudentStateClassWiseTable from "./components/TotalStudentStateClassWiseTable";
 import TotalStudentStateTable from "./components/TotalStudentStateTable";
 
 const StudentAttendanceGraphs = () => {
@@ -22,12 +23,18 @@ const StudentAttendanceGraphs = () => {
       </Card>
       <Card className="rounded-xl bg-white dark:bg-navy-800 p-5 mb-5">
         <h2 className="text-2xl font-bold dark:text-white">
-          Attendance Report
+          Attendance Reports
         </h2>
-        <TotalStudentStateTable/>
-        <div className="flex justify-between items-center gap-5" >
-            <StudentAttendancePieChart/>
-            <ClassWiseAttendanceReport/>
+        <TotalStudentStateTable />
+        <div className="flex justify-between items-center gap-5">
+          <StudentAttendancePieChart />
+          <ClassWiseAttendanceReport />
+        </div>
+        <div className="mt-5">
+          <TotalStudentStateClassWiseTable
+            tableData={[1, 1, 1, 1, 1, 1]}
+            tableName="Todays Classwise Attendance"
+          />
         </div>
       </Card>
     </>

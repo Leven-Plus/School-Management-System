@@ -4,56 +4,56 @@ import Radio from "../../../../../components/radio";
 import "./studentregistration.css";
 
 const StudentRegistrationForm = () => {
-  function convertToWords(date: string) {
-    var days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    var months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
+  // function convertToWords(date: string) {
+  //   var days = [
+  //     "Sunday",
+  //     "Monday",
+  //     "Tuesday",
+  //     "Wednesday",
+  //     "Thursday",
+  //     "Friday",
+  //     "Saturday",
+  //   ];
+  //   var months = [
+  //     "January",
+  //     "February",
+  //     "March",
+  //     "April",
+  //     "May",
+  //     "June",
+  //     "July",
+  //     "August",
+  //     "September",
+  //     "October",
+  //     "November",
+  //     "December",
+  //   ];
 
-    var dateParts: any = date.split("-");
-    var dateObject: any = new Date(
-      +dateParts[2],
-      dateParts[1] - 1,
-      +dateParts[0]
-    );
+  //   var dateParts: any = date.split("-");
+  //   var dateObject: any = new Date(
+  //     +dateParts[2],
+  //     dateParts[1] - 1,
+  //     +dateParts[0]
+  //   );
 
-    var dayName = days[dateObject.getDay()];
-    var monthName = months[dateObject.getMonth()];
-    var dateNumber = dateObject.getDate();
+  //   var dayName = days[dateObject.getDay()];
+  //   var monthName = months[dateObject.getMonth()];
+  //   var dateNumber = dateObject.getDate();
 
-    return `${dayName}, ${monthName} ${dateNumber}, ${dateParts[2]}`;
-  }
+  //   return `${dayName}, ${monthName} ${dateNumber}, ${dateParts[2]}`;
+  // }
 
-  function getAge(date: string) {
-    const [day, month, year]: any = date.split("-");
-    const birthDate = new Date(year, month - 1, day);
-    const today = new Date();
-    let age = today.getFullYear() - birthDate.getFullYear();
-    const m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-      age--;
-    }
-    return age;
-  }
+  // function getAge(date: string) {
+  //   const [day, month, year]: any = date.split("-");
+  //   const birthDate = new Date(year, month - 1, day);
+  //   const today = new Date();
+  //   let age = today.getFullYear() - birthDate.getFullYear();
+  //   const m = today.getMonth() - birthDate.getMonth();
+  //   if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+  //     age--;
+  //   }
+  //   return age;
+  // }
 
   const I18n = (p: { hi: string; en: string; gu: string }) => {
     let lang = "";
@@ -68,6 +68,7 @@ const StudentRegistrationForm = () => {
       <Card className="rounded-xl bg-white dark:bg-navy-800 p-5 mb-5">
         <h2 className="text-2xl font-bold dark:text-white">Personal Details</h2>
         <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-4">
+
           <fieldset className="border-[2px] p-2 rounded-lg dark:border-navy-200">
             <legend className="text-xl text-navy-700 dark:text-white px-1.5">
               <I18n hi="नाॊंदणी क्रमांक" gu="idk" en="Registration No" />
@@ -83,6 +84,8 @@ const StudentRegistrationForm = () => {
               required
             />
           </fieldset>
+
+
           <fieldset className="border-[2px] p-2 rounded-lg dark:border-navy-200">
             <legend className="text-xl text-navy-700 dark:text-white px-1.5">
               Registration Date<span className="text-red-500">*</span>

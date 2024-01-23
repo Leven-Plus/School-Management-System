@@ -96,7 +96,7 @@ function EmployeeAttendanceRegisterList(props: { tableData: any; tableName?: str
         <TBody>
           {data.map((r:any, r_i: number) => {
             return (
-              <Tr>
+              <Tr key={r}>
                 <Td>
                   {r_i + 1}
                 </Td>

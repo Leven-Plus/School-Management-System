@@ -3,7 +3,7 @@ import Card from "../../../../../components/card";
 import Radio from "../../../../../components/radio";
 import Button from "../../../../../components/button/Button";
 
-const StudentMedicalFitness = () => {
+const StudentMedicalFitness:React.FC = () => {
   return (
     <>
       <Card className="rounded-xl bg-white dark:bg-navy-800 p-5 mb-5">

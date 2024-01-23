@@ -2,7 +2,7 @@ import React from "react";
 import EmployeeRfidAssignList from "./components/EmployeeRfidAssignList";
 import Card from "../../../../../components/card";
 
-const EmployeeRfidAssign = () => {
+const EmployeeRfidAssign:React.FC = () => {
   return (
     <>
       <Card className="rounded-xl bg-white dark:bg-navy-800 p-5 mb-5">

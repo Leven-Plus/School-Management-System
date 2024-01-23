@@ -82,7 +82,7 @@ function CategoryWiseStrengtReportList(props: {
          {StreamInfo?.map((item:any, index:number) => {
           return(
             <>
-              <Tr>
+              <Tr key={index}>
                 <Td>{item}</Td>
                 <Td extras="border-b-2 border-l-2 pl-[8%]">General</Td>
                 <Td extras="text-center border-b-2 border-l-2">11</Td>
@@ -92,7 +92,7 @@ function CategoryWiseStrengtReportList(props: {
                 <Td extras="text-center border-b-2">11</Td>
                 <Td extras="text-center border-b-2">11</Td>
               </Tr>
-              <Tr>
+              <Tr key={index}>
                 <Td>{""}</Td>
                 <Td extras="border-b-2 border-l-2 pl-[8%]">OBC</Td>
                 <Td extras="text-center border-b-2 border-l-2">11</Td>

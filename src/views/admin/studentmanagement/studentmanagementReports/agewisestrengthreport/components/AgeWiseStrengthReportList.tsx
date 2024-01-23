@@ -87,7 +87,7 @@ function AgeWiseStrengthReportList(props: {
               <Th>{""}</Th>
               {ClassInfo?.map((item: any, index: number) => {
                 return (
-                  <Th colspan={3} textalign="center" extras="text-size-[0.5em]">
+                  <Th key={index} colspan={3} textalign="center" extras="text-size-[0.5em]">
                     {item}
                   </Th>
                 );
@@ -103,7 +103,7 @@ function AgeWiseStrengthReportList(props: {
                     <Th key={index} extras="border-l-2 pl-2">
                       Male
                     </Th>
-                    <Th>Female</Th>
+                    <Th key={item}>Female</Th>
                     <Th>Total</Th>
                   </>
                 );
@@ -123,8 +123,8 @@ function AgeWiseStrengthReportList(props: {
                   {ClassInfo?.map((item2: any, index2: number) => {
                     return (
                       <>
-                        <Td extras="border-l-2 text-center">12</Td>
-                        <Td extras="text-center">12</Td>
+                        <Td key={item2} extras="border-l-2 text-center">12</Td>
+                        <Td key={index2} extras="text-center">12</Td>
                         <Td extras="text-center">24</Td>
                       </>
                     );

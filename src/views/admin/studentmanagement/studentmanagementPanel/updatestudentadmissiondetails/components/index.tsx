@@ -76,12 +76,6 @@ function StudentAdmissionDetailsList(props: {
     }, 100);
   }, [perPagex]);
 
-  const obj = {
-    name: "Luke Skywalker",
-    title: "Jedi Knight",
-    age: 23,
-  };
-
   const tableWidth = Object.values(fieldData).filter((x) => {
     return x === true;
   });
@@ -110,7 +104,7 @@ function StudentAdmissionDetailsList(props: {
             <Th>Class[Section]</Th>
             {Object.keys(fieldData).map((key, index) => {
               if (fieldData[key]) {
-                return <Th>{key}</Th>;
+                return <Th key={index}>{key}</Th>;
               }
             })}
           </Tr>
@@ -119,7 +113,7 @@ function StudentAdmissionDetailsList(props: {
         <TBody>
           {data.map((r: any, r_i: number) => {
             return (
-              <Tr>
+              <Tr key={r}>
                 <Td>{r_i + 1}</Td>
                 <Td>SFTIDSTD{r_i + 1}</Td>
                 <Td>Yogesh Maurya</Td>
