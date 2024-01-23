@@ -72,8 +72,8 @@ import Dashboard from "../../views/admin/dashboard/index";
 import RoutesLayout from "../../layouts/RoutesLayout";
 import StudentRegistrationForm from "../../views/admin/studentmanagement/studentmanagementPanel/studentregistration";
 import StudentRegistrationList from "../../views/admin/studentmanagement/studentmanagementPanel/studentregistrationlist";
-import Marketplace from "../../views/admin/marketplace";
-import ProfileOverview from "../../views/admin/profile";
+// import Marketplace from "../../views/admin/marketplace";
+// import ProfileOverview from "../../views/admin/profile";
 import StudentAdmissionList from "../../views/admin/studentmanagement/studentmanagementPanel/studentadmissionlist";
 import RfidCardAssign from "../../views/admin/studentmanagement/studentmanagementPanel/rfidcardassign";
 import SetFeeCategory from "../../views/admin/studentmanagement/studentmanagementPanel/setfeecategory";
@@ -141,6 +141,8 @@ import DayWiseWithTimeStudentMonthlyAttendance from "../../views/admin/attendanc
 import StudentAttendanceAnnually from "../../views/admin/attendancemanagement/studentsattendancereportpanel/studentattendanceannually";
 import EmployeeAttendanceCategoryWise from "../../views/admin/attendancemanagement/employeesattendancereportpanel/categorywiseemployeeattendance";
 import EmployeeAttendanceEmployeeWise from "../../views/admin/attendancemanagement/employeesattendancereportpanel/employeewiseemployeeattendance";
+import DayWiseEmployeeMonthlyAttendance from "../../views/admin/attendancemanagement/employeesattendancereportpanel/daywiseemployeemonthlyattendance";
+import DayWiseWithTimeEmployeeMonthlyAttendance from "../../views/admin/attendancemanagement/employeesattendancereportpanel/withtimeemployeemonthlyattendance";
 
 const styleOne = {
   fontSize: "2.5em",
@@ -1008,6 +1010,7 @@ const AttendanceManagementModules: CoreData[] | null = true
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
             to: "/admin/attendance-management/employee-attendance-monthly-day-wise",
+            component:<DayWiseEmployeeMonthlyAttendance/>,
             modules: [],
           },
           {
@@ -1015,6 +1018,7 @@ const AttendanceManagementModules: CoreData[] | null = true
             icon: <LuClipboardList />,
             icon2: <LuClipboardList style={styleOne} />,
             to: "/admin/attendance-management/employee-attendance-monthly-with-time",
+            component:<DayWiseWithTimeEmployeeMonthlyAttendance/>,
             modules: [],
           },
         ],
@@ -3132,7 +3136,155 @@ const modulesData: CoreData[] = [
             }}
           />
         ),
-        modules: [],
+        modules: [
+          {
+            name: "Student Attendance Fill",
+            icon: <LuListChecks />,
+            icon2: <LuListChecks style={styleOne} />,
+            to: "/admin/attendance-management/fill-student-attendance",
+            modules: [],
+          },
+          {
+            name: "Student Attendance List",
+            icon: <LuList />,
+            icon2: <LuList style={styleOne} />,
+            to: "/admin/attendance-management/student-attendance-list",
+            modules: [],
+          },
+          {
+            name: "Attendance Graphs",
+            icon: <LuPieChart />,
+            icon2: <LuPieChart style={styleOne} />,
+            to: "/admin/attendance-management/student-attendance-report",
+            modules: [],
+          },
+          {
+            name: "Student ATT. & SMS",
+            icon: <TiMessages />,
+            icon2: <TiMessages style={styleOne} />,
+            to: "/admin/attendance-management/student-attendance-and-sms",
+            modules: [],
+          },
+          {
+            name: "Employee Attendance Fill",
+            icon: <LuListChecks />,
+            icon2: <LuListChecks style={styleOne} />,
+            to: "/admin/attendance-management/fill-employee-attendance",
+            modules: [],
+          },
+          {
+            name: "Employee Attendance List",
+            icon: <LuList />,
+            icon2: <LuList style={styleOne} />,
+            to: "/admin/attendance-management/employee-attendance-list",
+            modules: [],
+          },
+          {
+            name: "Students RFID Management",
+            icon: <LuUsers2 />,
+            icon2: <LuUsers2 style={styleOne} />,
+            to: "/admin/attendance-management/student-rfid-management",
+            modules: [],
+          },
+          {
+            name: "Employee RFID Management",
+            icon: <LuUserCheck2 />,
+            icon2: <LuUserCheck2 style={styleOne} />,
+            to: "/admin/attendance-management/employee-rfid-management",
+            modules: [],
+          },
+          {
+            name: "Student RFID Machine",
+            icon: <LuTablet />,
+            icon2: <LuTablet style={styleOne} />,
+            to: "/admin/attendance-management/student-rfid-machine",
+            modules: [],
+          },
+          {
+            name: "Employee RFID Machine",
+            icon: <LuTablet />,
+            icon2: <LuTablet style={styleOne} />,
+            to: "/admin/attendance-management/employee-rfid-machine",
+            modules: [],
+          },
+          {
+            name: "Data Received From RFID Machine",
+            icon: <LuDatabase />,
+            icon2: <LuDatabase style={styleOne} />,
+            to: "/admin/attendance-management/data-received-from-rfid-machine",
+            modules: [],
+          },
+          {
+            name: "Student Report (Class Wise)",
+            icon: <LuClipboardList />,
+            icon2: <LuClipboardList style={styleOne} />,
+            to: "/admin/attendance-management/student-attendance-report-class-wise",
+            modules: [],
+          },
+          {
+            name: "Daily Student Report (Gender Wise)",
+            icon: <LuClipboardList />,
+            icon2: <LuClipboardList style={styleOne} />,
+            to: "/admin/attendance-management/daily-student-attendance-report-gender-wise",
+            modules: [],
+          },
+          {
+            name: "Attendance Report (Student Wise)",
+            icon: <LuClipboardList />,
+            icon2: <LuClipboardList style={styleOne} />,
+            to: "/admin/attendance-management/attendance-report-student-wise",
+            modules: [],
+          },
+          {
+            name: "Student Attendance Monthly (Day Wise)",
+            icon: <LuClipboardList />,
+            icon2: <LuClipboardList style={styleOne} />,
+            to: "/admin/attendance-management/student-attendance-monthly-day-wise",
+            modules: [],
+          },
+          {
+            name: "Student Attendance Annually",
+            icon: <LuClipboardList />,
+            icon2: <LuClipboardList style={styleOne} />,
+            to: "/admin/attendance-management/student-attendance-annually",
+            modules: [],
+          },
+          {
+            name: "Student Attendance Monthly (With Time)",
+            icon: <LuClipboardList />,
+            icon2: <LuClipboardList style={styleOne} />,
+            to: "/admin/attendance-management/student-attendance-monthly-with-time",
+            modules: [],
+          },
+          {
+            name: "Employee Report (Category Wise)",
+            icon: <LuClipboardList />,
+            icon2: <LuClipboardList style={styleOne} />,
+            to: "/admin/attendance-management/employee-attendance-report-category-wise",
+            modules: [],
+          },
+          {
+            name: "Employee Report (Employee Wise)",
+            icon: <LuClipboardList />,
+            icon2: <LuClipboardList style={styleOne} />,
+            to: "/admin/attendance-management/employee-attendance-report-employee-wise",
+            modules: [],
+          },
+          {
+            name: "Employee Attendance Monthly (Day Wise)",
+            icon: <LuClipboardList />,
+            icon2: <LuClipboardList style={styleOne} />,
+            to: "/admin/attendance-management/employee-attendance-monthly-day-wise",
+            modules: [],
+          },
+          {
+            name: "Employee Attendance Monthly (With Time)",
+            icon: <LuClipboardList />,
+            icon2: <LuClipboardList style={styleOne} />,
+            to: "/admin/attendance-management/employee-attendance-monthly-with-time",
+            modules: [],
+          },
+        ],
       },
       {
         name: "Leave Managenet",
@@ -3779,27 +3931,27 @@ const modulesData: CoreData[] = [
       },
     ],
   },
-  {
-    _id: "",
-    title: "time pass",
-    nodes: [
-      {
-        name: "LP Marketplace",
-        icon: <></>,
-        icon2: <></>,
-        component: <Marketplace />,
-        to: "/admin/lp-marketplace",
-        modules: [],
-      },
-      {
-        name: "profile",
-        icon: <></>,
-        icon2: <></>,
-        component: <ProfileOverview />,
-        to: "/admin/profile",
-      },
-    ],
-  },
+  // {
+  //   _id: "",
+  //   title: "time pass",
+  //   nodes: [
+  //     {
+  //       name: "LP Marketplace",
+  //       icon: <></>,
+  //       icon2: <></>,
+  //       component: <Marketplace />,
+  //       to: "/admin/lp-marketplace",
+  //       modules: [],
+  //     },
+  //     {
+  //       name: "profile",
+  //       icon: <></>,
+  //       icon2: <></>,
+  //       component: <ProfileOverview />,
+  //       to: "/admin/profile",
+  //     },
+  //   ],
+  // },
 ];
 
 export const routesDataSlice = createSlice({
