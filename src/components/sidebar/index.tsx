@@ -68,7 +68,7 @@ function SideBar({ compact, setCompact, children }: SideBarProp) {
         }}
       ></div>
 
-      <div className="links overflow-auto hidescroll">{children}</div>
+      <div className={`links overflow-auto hidescroll`}>{children}</div>
     </motion.div>
   );
 }
