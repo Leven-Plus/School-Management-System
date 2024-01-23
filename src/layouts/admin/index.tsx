@@ -5,10 +5,12 @@ import { NavLink, SideBar } from "../../components/sidebar";
 import { LiaUserShieldSolid } from "react-icons/lia";
 import Footer from "../../components/footer/Footer";
 import { useSelector } from "react-redux";
-import { LuShoppingBag, LuUserCog2 } from "react-icons/lu";
+// import { LuShoppingBag, LuUserCog2 } from "react-icons/lu";
 import RoutesLayout from "../RoutesLayout";
+import Modal from "../../components/modal";
 
 export default function Admin(props: { [x: string]: any }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [, setProgress] = useState(0);
   const location = useLocation();
   const pathNameArray = location?.pathname?.split("/");
@@ -58,7 +60,9 @@ export default function Admin(props: { [x: string]: any }) {
       }, 10);
     }
   }, [location]);
-  
+
+  console.log(isModalOpen);
+
   return (
     <div className="flex h-full w-full">
       {/* <LoadingBar
@@ -72,36 +76,36 @@ export default function Admin(props: { [x: string]: any }) {
         {moduleRoutes?.map((link: any, index: number) => {
           return (
             <>
-              <NavLink
-                key={index}
-                compact={sideBarCompact}
-                name={link?.name}
-                icon={link?.icon}
-                to={link?.to}
-              />
               {index === 0 && (
                 <NavLink
                   compact={sideBarCompact}
-                  name={"Admin"}
+                  name={!sideBarCompact ? "Admin" : ""}
                   icon={<LiaUserShieldSolid />}
                   to={"/admin"}
                 />
               )}
+              <NavLink
+                key={index}
+                compact={sideBarCompact}
+                name={!sideBarCompact ? link?.name : ""}
+                icon={link?.icon}
+                to={link?.to}
+              />
             </>
           );
         })}
-        <NavLink
+        {/* <NavLink
           compact={sideBarCompact}
-          name={"LP Marketplace"}
+          name={!sideBarCompact ? "LP Marketplace" : ""}
           icon={<LuShoppingBag />}
           to={"/admin/marketplace"}
         />{" "}
         <NavLink
           compact={sideBarCompact}
-          name={"Profile Settings"}
+          name={!sideBarCompact ? "Profile Settings" : ""}
           icon={<LuUserCog2 />}
           to={"/admin/profile-settings"}
-        />
+        /> */}
       </SideBar>
 
       <div className="h-full w-full bg-lightPrimary dark:!bg-navy-900">
@@ -112,6 +116,7 @@ export default function Admin(props: { [x: string]: any }) {
         >
           <div className="h-full">
             <Navbar
+              searchOnClick={setIsModalOpen}
               onOpenSidenav={() => {
                 setSideBarCompact(!sideBarCompact);
               }}
@@ -127,6 +132,9 @@ export default function Admin(props: { [x: string]: any }) {
           </div>
         </main>
       </div>
+      {isModalOpen && (
+          <Modal isOpen={isModalOpen} isClose={setIsModalOpen} />
+      )}
     </div>
   );
 }
