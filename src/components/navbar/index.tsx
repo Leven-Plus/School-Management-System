@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import navbarimage from "../../assets/img/layout/Navbar.png";
 import { BsArrowBarUp } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
-import { RiMoonFill, RiSunFill } from "react-icons/ri";
+// import { RiMoonFill, RiSunFill } from "react-icons/ri";
 import {
   IoMdNotificationsOutline,
   IoMdInformationCircleOutline,
@@ -14,6 +14,8 @@ import avatar from "../../assets/img/avatars/avatar11.png";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import { LuChevronLeft } from "react-icons/lu";
 import Keybinding from "react-keybinding-component";
+import { IoLanguage } from "react-icons/io5";
+import { useCookies } from "react-cookie";
 
 const Navbar = (props: {
   onOpenSidenav: () => void;
@@ -21,7 +23,9 @@ const Navbar = (props: {
   searchOnClick: any;
 }) => {
   const { onOpenSidenav, brandText } = props;
-  const [darkmode, setDarkmode] = React.useState(false);
+  // const [darkmode, setDarkmode] = React.useState(false);
+
+  const [, setCookie] = useCookies();
 
   let [headerStick, setHeaderStick] = useState(false);
 
@@ -71,7 +75,6 @@ const Navbar = (props: {
       <Keybinding
         onKey={(e) => {
           e.preventDefault();
-          console.log(e.code);
           if (e.code === "Slash") {
             toggleTrue();
           }
@@ -206,7 +209,7 @@ const Navbar = (props: {
           classNames={"py-2 top-4 -left-[230px] md:-left-[440px] w-max"}
         />
         {/* start Horizon PRO */}
-        <Dropdown
+        {/* <Dropdown
           button={
             <p className="cursor-pointer">
               <IoMdInformationCircleOutline className="h-4 w-4 text-gray-600 dark:text-white" />
@@ -247,25 +250,38 @@ const Navbar = (props: {
           }
           classNames={"py-2 top-6 -left-[250px] md:-left-[330px] w-max"}
           animation="origin-[75%_0%] md:origin-top-right transition-all duration-300 ease-in-out"
+        /> */}
+        <Dropdown
+          button={
+            <p className="cursor-pointer">
+              <IoLanguage className="h-4 w-4 text-gray-600 dark:text-white" />
+            </p>
+          }
+          animation="origin-[65%_0%] md:origin-top-right transition-all duration-300 ease-in-out"
+          children={
+            <div className="z-50 w-max rounded-xl bg-white py-3 px-4 text-sm shadow-xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
+              <p
+                className="hover:text-black flex cursor-pointer items-center gap-2 text-gray-600 hover:text-gray-300"
+                onClick={() => setCookie("preferedLanguage", "en", { path: "/" })}
+              >
+                English
+              </p>
+              <p
+                className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:text-gray-300"
+                onClick={() => setCookie("preferedLanguage", "gu", { path: "/" })}
+              >
+                Gujarati
+              </p>
+              <p
+                className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:text-gray-300"
+                onClick={() => setCookie("preferedLanguage", "hi", { path: "/" })}
+              >
+                Hindi
+              </p>
+            </div>
+          }
+          classNames={"py-2 top-4 right-0 w-max"}
         />
-        <div
-          className="cursor-pointer text-gray-600"
-          onClick={() => {
-            if (darkmode) {
-              document.body.classList.remove("dark");
-              setDarkmode(false);
-            } else {
-              document.body.classList.add("dark");
-              setDarkmode(true);
-            }
-          }}
-        >
-          {darkmode ? (
-            <RiSunFill className="h-4 w-4 text-gray-600 dark:text-white" />
-          ) : (
-            <RiMoonFill className="h-4 w-4 text-gray-600 dark:text-white" />
-          )}
-        </div>
         {/* Profile & Dropdown */}
         <Dropdown
           button={
