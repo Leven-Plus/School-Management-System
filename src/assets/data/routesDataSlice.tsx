@@ -38,6 +38,7 @@ import {
   LuSchool,
   LuSend,
   LuSettings,
+  LuShoppingBag,
   LuTable,
   LuTablet,
   LuUser2,
@@ -143,9 +144,10 @@ import EmployeeAttendanceCategoryWise from "../../views/admin/attendancemanageme
 import EmployeeAttendanceEmployeeWise from "../../views/admin/attendancemanagement/employeesattendancereportpanel/employeewiseemployeeattendance";
 import DayWiseEmployeeMonthlyAttendance from "../../views/admin/attendancemanagement/employeesattendancereportpanel/daywiseemployeemonthlyattendance";
 import DayWiseWithTimeEmployeeMonthlyAttendance from "../../views/admin/attendancemanagement/employeesattendancereportpanel/withtimeemployeemonthlyattendance";
+import Translate from "../../components/multigual/Translate";
 
 export type modules = {
-  name: string;
+  name: any;
   des?: string;
   icon: JSX.Element;
   icon2: JSX.Element;
@@ -154,7 +156,7 @@ export type modules = {
 };
 
 export type Modules = {
-  name: string;
+  name: any;
   des?: string;
   icon: JSX.Element;
   icon2: JSX.Element;
@@ -163,7 +165,7 @@ export type Modules = {
 };
 
 export interface CoreModules {
-  name: string;
+  name: any;
   des?: string;
   icon: JSX.Element;
   icon2: JSX.Element;
@@ -2733,7 +2735,7 @@ const modulesData: CoreData[] = [
     title: "Dashboard",
     nodes: [
       {
-        name: "Dashboard",
+        name: <Translate en="Dashboard" gu="ડેશબોર્ડ" hi="डैशबोर्ड" />,
         icon: <LuLayoutDashboard />,
         icon2: <LuLayoutDashboard  />,
         to: "/admin/dashboard",
@@ -3933,16 +3935,16 @@ const modulesData: CoreData[] = [
     nodes: [
       {
         name: "LP Marketplace",
-        icon: <></>,
-        icon2: <></>,
+        icon: <LuShoppingBag />,
+        icon2: <LuShoppingBag />,
         component: <Marketplace />,
         to: "/admin/lp-marketplace",
         modules: [],
       },
       {
         name: "profile",
-        icon: <></>,
-        icon2: <></>,
+        icon: <LuUserCog2 />,
+        icon2: <LuUserCog2 />,
         component: <ProfileOverview />,
         to: "/admin/profile",
       },
