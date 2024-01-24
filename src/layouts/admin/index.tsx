@@ -5,7 +5,7 @@ import { NavLink, SideBar } from "../../components/sidebar";
 import { LiaUserShieldSolid } from "react-icons/lia";
 import Footer from "../../components/footer/Footer";
 import { useSelector } from "react-redux";
-// import { LuShoppingBag, LuUserCog2 } from "react-icons/lu";
+import { LuShoppingBag, LuUserCog2 } from "react-icons/lu";
 import RoutesLayout from "../RoutesLayout";
 import Modal from "../../components/modal";
 
@@ -93,19 +93,7 @@ export default function Admin(props: { [x: string]: any }) {
               />
             </>
           );
-        })}
-        {/* <NavLink
-          compact={sideBarCompact}
-          name={!sideBarCompact ? "LP Marketplace" : ""}
-          icon={<LuShoppingBag />}
-          to={"/admin/marketplace"}
-        />{" "}
-        <NavLink
-          compact={sideBarCompact}
-          name={!sideBarCompact ? "Profile Settings" : ""}
-          icon={<LuUserCog2 />}
-          to={"/admin/profile-settings"}
-        /> */}
+        })} 
       </SideBar>
 
       <div className="h-full w-full bg-lightPrimary dark:!bg-navy-900">
