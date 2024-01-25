@@ -74,7 +74,7 @@ function SideBar({ compact, setCompact, children }: SideBarProp) {
 }
 
 type NavLinkProp = {
-  name: string;
+  name: any;
   icon: React.ReactNode;
   compact?: boolean;
   to?: string;

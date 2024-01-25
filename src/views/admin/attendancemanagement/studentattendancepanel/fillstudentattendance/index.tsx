@@ -5,11 +5,123 @@ import FillAttendanceTable from "./components/FillAttendanceTable";
 import DropdownAlt from "../../../../../components/dropdown/index_alt";
 import { useState } from "react";
 import { IoLanguage } from "react-icons/io5";
+import { useCookies } from "react-cookie";
+import "./fillstudentattendance.css";
 
 const FillStudentAttendance = () => {
+  const [cookie, setCookie] = useCookies();
   const currentDate = new Date();
   const [open, setOpen] = useState(false);
   const transparent = false;
+
+  const getGujaratiDate = () => {
+    const currentDate = new Date();
+
+    const gujaratiMonths = [
+      "જાન્યુઆરી",
+      "ફેબ્રુઆરી",
+      "માર્ચ",
+      "એપ્રિલ",
+      "મે",
+      "જૂન",
+      "જુલાઈ",
+      "ઑગસ્ટ",
+      "સપ્ટેમ્બર",
+      "ઑક્ટોબર",
+      "નવેમ્બર",
+      "ડિસેમ્બર",
+    ];
+
+    const gujaratiDays = [
+      "રવિવાર",
+      "સોમવાર",
+      "મંગળવાર",
+      "બુધવાર",
+      "ગુરુવાર",
+      "શુક્રવાર",
+      "શનિવાર",
+    ];
+
+    const gujaratiMonth = gujaratiMonths[currentDate.getMonth()];
+    const gujaratiDay = gujaratiDays[currentDate.getDay()];
+
+    return `${gujaratiDay}, ${currentDate.getDate()} ${gujaratiMonth} ${currentDate.getFullYear()}`;
+  };
+
+  const getHindiDate = () => {
+    const currentDate = new Date();
+
+    const hindiMonths = [
+      "जनवरी",
+      "फ़रवरी",
+      "मार्च",
+      "अप्रैल",
+      "मई",
+      "जून",
+      "जुलाई",
+      "अगस्त",
+      "सितंबर",
+      "अक्टूबर",
+      "नवंबर",
+      "दिसंबर",
+    ];
+
+    const hindiDays = [
+      "रविवार",
+      "सोमवार",
+      "मंगलवार",
+      "बुधवार",
+      "गुरुवार",
+      "शुक्रवार",
+      "शनिवार",
+    ];
+
+    const hindiMonth = hindiMonths[currentDate.getMonth()];
+    const hindiDay = hindiDays[currentDate.getDay()];
+
+    return `${hindiDay}, ${currentDate.getDate()} ${hindiMonth} ${currentDate.getFullYear()}`;
+  };
+
+  const getEnglishDate = () => {
+    const currentDate = new Date();
+
+    const englishMonths = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    const englishDays = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    const englishMonth = englishMonths[currentDate.getMonth()];
+    const englishDay = englishDays[currentDate.getDay()];
+
+    return `${englishDay}, ${currentDate.getDate()} ${englishMonth} ${currentDate.getFullYear()}`;
+  };
+
+  const TranslateMessage = (p: { hi: string; en: string; gu: string }) => {
+    let lang = cookie.preferedMessageLanguage;
+    if (lang === "gu") return p.gu;
+    if (lang === "hi") return p.hi;
+    return p.en;
+  };
 
   return (
     <>
@@ -149,19 +261,28 @@ const FillStudentAttendance = () => {
               <div className="z-50 w-max rounded-xl bg-white py-3 px-4 text-sm shadow-xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
                 <p
                   className="hover:text-black flex cursor-pointer items-center gap-2 text-gray-600 hover:text-gray-300"
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setCookie("preferedMessageLanguage", "en");
+                    setOpen(false);
+                  }}
                 >
                   English
                 </p>
                 <p
                   className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:text-gray-300"
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setCookie("preferedMessageLanguage", "gu");
+                    setOpen(false);
+                  }}
                 >
                   Gujarati
                 </p>
                 <p
                   className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:text-gray-300"
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setCookie("preferedMessageLanguage", "hi");
+                    setOpen(false);
+                  }}
                 >
                   Hindi
                 </p>
@@ -181,9 +302,13 @@ const FillStudentAttendance = () => {
               <label htmlFor="present-student">Present Student</label>
             </legend>
             <Textarea
+              id="meesage_textArea"
               css={"height:10em"}
-              defaultValue={`Dear Parent, Your Ward student_name is PRESENT Today ${new Date().toDateString()}, Regards P.P SAVANI SCHOOL.`}
-              placeholder="Write Message Here..."
+              placeholder={TranslateMessage({
+                en: `Dear Parent, Your Ward student_name is PRESENT Today ${getEnglishDate()}, Regards P.P SAVANI SCHOOL.`,
+                gu: `પ્રિય વાલીઓ, તમારા વોર્ડના વિદ્યાર્થીનું_નામ આજે ${getGujaratiDate()} ના રોજ હાજર છે, P.P સવાણી શાળાને સાદર`,
+                hi: `प्रिय माता-पिता, आपके वार्ड के छात्र का नाम आज ${getHindiDate()} को प्रस्तुत है, सादर पी.पी. सवानी स्कूल।`,
+              })}
             />
           </fieldset>
           <fieldset className="border-[2px] p-2 rounded-lg dark:border-navy-200">
@@ -197,9 +322,13 @@ const FillStudentAttendance = () => {
               <label htmlFor="present-student">Half Day Student</label>
             </legend>
             <Textarea
+              id="meesage_textArea"
               css={"height:10em"}
-              defaultValue={`Dear Parent, Your Ward student_name is on HALF DAY Today ${new Date().toDateString()}, Regards P.P SAVANI SCHOOL.`}
-              placeholder="Write Message Here..."
+              placeholder={TranslateMessage({
+                en: `Dear Parent, Your Ward student_name is on HALF DAY Today ${getEnglishDate()}, Regards P.P SAVANI SCHOOL.`,
+                gu: `પ્રિય વાલીઓ, તમારા વોર્ડના વિદ્યાર્થીનું_નામ આજે ${getGujaratiDate()} ના રોજ હાજર છે, P.P સવાણી શાળાને સાદર`,
+                hi: `प्रिय माता-पिता, आपके वार्ड के छात्र का नाम आज ${getHindiDate()} को हाफ डे पर है, सादर पी.पी. सवानी स्कूल।`,
+              })}
             />
           </fieldset>{" "}
           <fieldset className="border-[2px] p-2 rounded-lg dark:border-navy-200">
@@ -213,9 +342,13 @@ const FillStudentAttendance = () => {
               <label htmlFor="present-student">Absent Student</label>
             </legend>
             <Textarea
+              id="meesage_textArea"
               css={"height:10em"}
-              defaultValue={`Dear Parent, Your Ward student_name is ABSENT Today ${new Date().toDateString()}, Regards P.P SAVANI SCHOOL.`}
-              placeholder="Write Message Here..."
+              placeholder={TranslateMessage({
+                en: `Dear Parent, Your Ward student_name is on ABSENT Today ${getEnglishDate()}, Regards P.P SAVANI SCHOOL.`,
+                gu: `પ્રિય વાલીઓ, તમારા વોર્ડના વિદ્યાર્થીનું_નામ આજે ${getGujaratiDate()} ના ગેરહાજર છે, P.P સવાણી શાળાને સાદર`,
+                hi: `प्रिय माता-पिता, आपके वार्ड के छात्र का नाम आज ${getHindiDate()} को अनुपस्थित है, सादर पी.पी. सवानी स्कूल।`,
+              })}
             />
           </fieldset>{" "}
           <fieldset className="border-[2px] p-2 rounded-lg dark:border-navy-200">
@@ -229,9 +362,13 @@ const FillStudentAttendance = () => {
               <label htmlFor="present-student">Leave Student</label>
             </legend>
             <Textarea
+              id="meesage_textArea"
               css={"height:10em"}
-              defaultValue={`Dear Parent, Your Ward student_name is on Leave Today ${new Date().toDateString()}, Regards P.P SAVANI SCHOOL.`}
-              placeholder="Write Message Here..."
+              placeholder={TranslateMessage({
+                en: `Dear Parent, Your Ward student_name is on Leave Today ${getEnglishDate()}, Regards P.P SAVANI SCHOOL.`,
+                gu: `પ્રિય વાલીઓ, તમારા વોર્ડના વિદ્યાર્થીનું_નામ આજે ${getGujaratiDate()} ના રોજ રજા પર છે, P.P સવાણી શાળાને સાદર`,
+                hi: `प्रिय माता-पिता, आपके वार्ड के छात्र का नाम आज ${getHindiDate()} को छुट्टी पर है, सादर पी.पी. सवानी स्कूल।`,
+              })}
             />
           </fieldset>
         </div>

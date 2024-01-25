@@ -1,4 +1,3 @@
-import { useCookies } from "react-cookie";
 import Card from "../../../../../components/card";
 import Checkbox from "../../../../../components/checkbox";
 import Radio from "../../../../../components/radio";
@@ -6,7 +5,6 @@ import "./studentregistration.css";
 import Translate from "../../../../../components/multigual/Translate";
 
 const StudentRegistrationForm = () => {
-  const [cookie]=useCookies();
   // function convertToWords(date: string) {
   //   var days = [
   //     "Sunday",
@@ -57,13 +55,6 @@ const StudentRegistrationForm = () => {
   //   }
   //   return age;
   // }
-
-  const I18n = (p: { hi: string; en: string; gu: string }) => {
-    let lang = cookie.preferedLanguage;
-    if (lang === "gu") return p.gu;
-    if (lang === "hi") return p.hi;
-    return p.en;
-  };
 
   return (
     <form action="#" className="mx-auto mb-auto h-full min-h-[84vh]">

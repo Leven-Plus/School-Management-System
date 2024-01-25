@@ -2749,14 +2749,14 @@ const modulesData: CoreData[] = [
     title: "Student Management",
     nodes: [
       {
-        name: "Student Management",
+        name: <Translate en="Student Management" gu="સ્ટુડન્ટ મેનેજમેન્ટ" hi="छात्र मैनेजमेंट" />,
         icon: <LuUsers2 />,
         icon2: <LuUsers2  />,
         to: "/admin/student-management",
         component: (
           <RoutesLayout
             pageProps={{
-              pageName: "/student-management",
+              pageName: "/",
               data: StudentManagementModules,
               type: "typeTwo",
             }}
@@ -3026,7 +3026,7 @@ const modulesData: CoreData[] = [
         ],
       },
       {
-        name: "Certificate Management",
+        name: <Translate en="Certificate Management" gu="પ્રમાણપત્ર મેનેજમેન્ટ" hi="प्रमाणपत्र मैनेजमेंट" />,
         icon: <PiCertificate />,
         icon2: <PiCertificate  />,
         to: "/admin/certificate-management",
@@ -3042,7 +3042,7 @@ const modulesData: CoreData[] = [
         modules: [],
       },
       {
-        name: "ID Card Management",
+        name: <Translate en="ID Card Management" gu="આઈડી કાર્ડ મેનેજમેન્ટ" hi="आईडी कार्ड मैनेजमेंट" />,
         icon: <PiIdentificationBadge />,
         icon2: <PiIdentificationBadge  />,
         to: "/admin/id-card-management",
@@ -3121,7 +3121,7 @@ const modulesData: CoreData[] = [
     title: "Attendance Management",
     nodes: [
       {
-        name: "Attendance Management",
+        name: <Translate en="Attendance Management" gu="હાજરી મેનેજમેન્ટ" hi="उपस्थिति मैनेजमेंट" />,
         icon: <LuListChecks />,
         icon2: <LuListChecks  />,
         to: "/admin/attendance-management",
@@ -3285,7 +3285,7 @@ const modulesData: CoreData[] = [
         ],
       },
       {
-        name: "Leave Managenet",
+        name: <Translate en="Leave Managenet" gu="રજા મેનેજમેન્ટ" hi="छुट्टी मैनेजमेंट" />,
         icon: <GrDocumentUser />,
         icon2: <GrDocumentUser  />,
         to: "/admin/leave-management",
@@ -3307,7 +3307,7 @@ const modulesData: CoreData[] = [
     title: "Employee Management",
     nodes: [
       {
-        name: "Employee Management",
+        name: <Translate en="Employee Management" gu="કર્મચારી મેનેજમેન્ટ" hi="कर्मचारी मैनेजमेंट" />,
         icon: <LuUserCheck2 />,
         icon2: <LuUserCheck2  />,
         to: "/admin/employee-management",
@@ -3387,7 +3387,7 @@ const modulesData: CoreData[] = [
     title: "Financial Management",
     nodes: [
       {
-        name: "Fees Management",
+        name: <Translate en="Fees Management" gu="ફી મેનેજમેન્ટ" hi="फीस मैनेजमेंट" />,
         icon: <FaRegMoneyBillAlt />,
         icon2: <FaRegMoneyBillAlt  />,
         to: "/admin/fees-management",
@@ -3466,7 +3466,7 @@ const modulesData: CoreData[] = [
         ],
       },
       {
-        name: "Account Management",
+        name: <Translate en="Account Management" gu="હિસાબી મેનેજમેન્ટ" hi="खाता मैनेजमेंट" />,
         icon: <LuCalculator />,
         icon2: <LuCalculator  />,
         to: "/admin/accounts-management",
@@ -3503,7 +3503,7 @@ const modulesData: CoreData[] = [
     title: "Communication",
     nodes: [
       {
-        name: "Text & Whatsapp Messages",
+        name: <Translate en="Text & Whatsapp Messages" gu="ટેક્સ્ટ અને વોટ્સેપ સંદેશાઓ" hi="टेक्स्ट और व्हाट्सएप संदेश" />,
         icon: <TiMessages />,
         icon2: <TiMessages  />,
         to: "/admin/manage-messages",
@@ -3519,7 +3519,7 @@ const modulesData: CoreData[] = [
         modules: [],
       },
       {
-        name: "Notification Management",
+        name: <Translate en="Notification Management" gu="સૂચના મેનેજમેન્ટ" hi="अधिसूचना मैनेजमेंट" />,
         icon: <LuBellPlus />,
         icon2: <LuBellPlus  />,
         to: "/admin/notification-management",
@@ -3541,7 +3541,7 @@ const modulesData: CoreData[] = [
     title: "Academic Management",
     nodes: [
       {
-        name: "Principal Desk",
+        name: <Translate en="Principal Desk" gu="પ્રિન્સિપલ ડેસ્ક" hi="प्रिंसिपल डेस्क" />,
         icon: <LuUserSquare2 />,
         icon2: <LuUserSquare2  />,
         to: "/admin/principal-desk",
@@ -3557,7 +3557,7 @@ const modulesData: CoreData[] = [
         modules: [],
       },
       {
-        name: "Time Table",
+        name: <Translate en="Time Table" gu="ટાઈમ ટેબલ" hi="टाइम टेबल" />,
         icon: <LuTable />,
         icon2: <LuTable  />,
         to: "/admin/time-table-management",
@@ -3573,7 +3573,7 @@ const modulesData: CoreData[] = [
         modules: [],
       },
       {
-        name: "Homework",
+        name: <Translate en="Homework" gu="ગૃહ કાર્ય" hi="गृहकार्य" />,
         icon: <LuPencilRuler />,
         icon2: <LuPencilRuler  />,
         to: "/admin/homework-management",
@@ -3589,7 +3589,7 @@ const modulesData: CoreData[] = [
         modules: [],
       },
       {
-        name: "Classwork",
+        name: <Translate en="Classwork" gu="વર્ગકાર્ય" hi="कक्षा के कार्य" />,
         icon: <LuBookMarked />,
         icon2: <LuBookMarked  />,
         to: "/admin/classwork-management",
@@ -3605,7 +3605,7 @@ const modulesData: CoreData[] = [
         modules: [],
       },
       {
-        name: "Examination",
+        name: <Translate en="Examination" gu="પરીક્ષા" hi="इंतिहान" />,
         icon: <PiExam />,
         icon2: <PiExam  />,
         to: "/admin/examination",
@@ -3671,7 +3671,7 @@ const modulesData: CoreData[] = [
     title: "Transportation Management",
     nodes: [
       {
-        name: "Bus & Van Management",
+        name: <Translate en="Bus & Van Management" gu="બસ અને વેન મેનેજમેન્ટ" hi="बस एवं वैन मैनेजमेंट" />,
         icon: <LuBus />,
         icon2: <LuBus  />,
         to: "/admin/bus-van-management",
@@ -3693,7 +3693,7 @@ const modulesData: CoreData[] = [
     title: "Task and Reminder Management",
     nodes: [
       {
-        name: "Reminder Management",
+        name: <Translate en="Reminder Management" gu="રીમાઇન્ડર મેનેજમેન્ટ" hi="अनुस्मारक मैनेजमेंट" />,
         icon: <LuListTodo />,
         icon2: <LuListTodo  />,
         to: "/admin/reminder-management",
@@ -3715,7 +3715,7 @@ const modulesData: CoreData[] = [
     title: "Application Managment",
     nodes: [
       {
-        name: "Enquiry Management",
+        name: <Translate en="Enquiry Management" gu="પૂછપરછ મેનેજમેન્ટ" hi="पूछताछ मैनेजमेंट" />,
         icon: <TbMessageQuestion />,
         icon2: <TbMessageQuestion  />,
         to: "/admin/enquiries",
@@ -3731,7 +3731,7 @@ const modulesData: CoreData[] = [
         modules: [],
       },
       {
-        name: "Complaint Management",
+        name: <Translate en="Complaint Management" gu="ફરિયાદ મેનેજમેન્ટ" hi="शिकायत मैनेजमेंट" />,
         icon: <LiaExclamationSolid />,
         icon2: <LiaExclamationSolid  />,
         to: "/admin/complaint-management",
@@ -3747,7 +3747,7 @@ const modulesData: CoreData[] = [
         modules: [],
       },
       {
-        name: "Application Management",
+        name: <Translate en="Application Management" gu="એપ્લિકેશન મેનેજમેન્ટ" hi="आवेदन मैनेजमेंट" />,
         icon: <IoPhonePortraitOutline />,
         icon2: <IoPhonePortraitOutline  />,
         to: "/admin/application-management",
@@ -3769,7 +3769,7 @@ const modulesData: CoreData[] = [
     title: "Access Control",
     nodes: [
       {
-        name: "Manage Access",
+        name: <Translate en="Manage Access" gu="ઍક્સેસ મેનેજ" hi="पहुंच प्रबंधित" />,
         icon: <LuUserPlus2 />,
         icon2: <LuUserPlus2  />,
         to: "/admin/manage-access",
@@ -3791,7 +3791,7 @@ const modulesData: CoreData[] = [
     title: "System Management",
     nodes: [
       {
-        name: "School Management",
+        name: <Translate en="School Management" gu="શાળા મેનેજમેન્ટ" hi="स्कूल मैनेजमेंट" />,
         icon: <LuSchool />,
         icon2: <LuSchool  />,
         to: "/admin/manage-school-info",
@@ -3829,7 +3829,7 @@ const modulesData: CoreData[] = [
         ],
       },
       {
-        name: "Dowload Data",
+        name: <Translate en="Dowload Data" gu="ડેટા ડાઉનલોડ" hi="डेटा डाउनलोड" />,
         icon: <LuDownload />,
         icon2: <LuDownload  />,
         to: "/admin/download-data",
@@ -3845,7 +3845,7 @@ const modulesData: CoreData[] = [
         modules: [],
       },
       {
-        name: "Recyclebin (Past Expired Data)",
+        name: <Translate en="Recyclebin (Past Expired Data)" gu="રિસાયકલબિન (ભૂતકાળ સમાપ્ત થયેલ ડેટા)" hi="रीसायकलबिन (पुराना समाप्त डेटा)" />,
         icon: <RiDeleteBinLine />,
         icon2: <RiDeleteBinLine  />,
         to: "/admin/recyclebin-management",
@@ -3861,7 +3861,7 @@ const modulesData: CoreData[] = [
         modules: [],
       },
       {
-        name: "Software Management",
+        name: <Translate en="Software Management" gu="સોફ્ટવેર મેનેજમેન્ટ" hi="सॉफ्टवेयर मैनेजमेंट" />,
         icon: <LuSettings />,
         icon2: <LuSettings  />,
         to: "/admin/software-management",
@@ -3909,10 +3909,10 @@ const modulesData: CoreData[] = [
   },
   {
     _id: "section.12",
-    title: "Government Requirments",
+    title: "Government Requirement",
     nodes: [
       {
-        name: "Government Requirement",
+        name: <Translate en="Government Requirments" gu="સરકારી જરૂરિયાત" hi="सरकारी आवश्यकता" />,
         icon: <LuList />,
         icon2: <LuList  />,
         to: "/admin/government-requirements",
@@ -3934,7 +3934,7 @@ const modulesData: CoreData[] = [
     title: "time pass",
     nodes: [
       {
-        name: "LP Marketplace",
+        name: <Translate en="LP Marketplace" gu="એલપી માર્કેટપ્લેસ" hi="एलपी मार्केटप्लेस" />,
         icon: <LuShoppingBag />,
         icon2: <LuShoppingBag />,
         component: <Marketplace />,
@@ -3942,7 +3942,7 @@ const modulesData: CoreData[] = [
         modules: [],
       },
       {
-        name: "profile",
+        name: <Translate en="profile" gu="પ્રોફાઇલ" hi="प्रोफ़ाइल" />,
         icon: <LuUserCog2 />,
         icon2: <LuUserCog2 />,
         component: <ProfileOverview />,

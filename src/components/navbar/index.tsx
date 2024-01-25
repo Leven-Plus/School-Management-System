@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Dropdown from "../../components/dropdown";
 import { FiAlignJustify } from "react-icons/fi";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import navbarimage from "../../assets/img/layout/Navbar.png";
 import { BsArrowBarUp } from "react-icons/bs";
 import { FiSearch } from "react-icons/fi";
 // import { RiMoonFill, RiSunFill } from "react-icons/ri";
 import {
   IoMdNotificationsOutline,
-  IoMdInformationCircleOutline,
+  // IoMdInformationCircleOutline,
 } from "react-icons/io";
 import avatar from "../../assets/img/avatars/avatar11.png";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
@@ -25,7 +24,7 @@ const Navbar = (props: {
   const { onOpenSidenav, brandText } = props;
   // const [darkmode, setDarkmode] = React.useState(false);
 
-  const [, setCookie] = useCookies();
+  const [cookies, setCookie] = useCookies();
 
   let [headerStick, setHeaderStick] = useState(false);
 
@@ -136,7 +135,7 @@ const Navbar = (props: {
           <div className="flex items-center">
             <input
               type="text"
-              placeholder="Search..."
+              placeholder={cookies.preferedLanguage === "gu" ? "શોધો..." : cookies.preferedLanguage === "hi" ? "खोजें..." : "Search..."}
               onClick={() =>
                 props.searchOnClick(true)
                   ? () => props.searchOnClick(true)

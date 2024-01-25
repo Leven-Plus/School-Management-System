@@ -6,15 +6,30 @@ import KeyBinding from "react-keybinding-component";
 
 interface ModalProps {
   isOpen: boolean;
-  isClose: any;
+  isClose: Function;
 }
 
 const Modal: React.FC<ModalProps> = (props) => {
+
+  const modalCloseAction=  (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    let element  = e.target  as HTMLDivElement
+    
+    if  (element.classList.contains("search-modal"))  {
+      props.isClose(false)
+    }
+  }
+
   const { isOpen } = props;
   if (!isOpen) return null;
+
   if (isOpen) {
     return (
-      <div className="h-[100vh] w-full fixed top-0 left-0 z-50 bg-[#000000]/80">
+      <div
+        className="h-[100vh] w-full fixed top-0 left-0 z-50 bg-[#000000]/80 search-modal"
+        onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
+          modalCloseAction(e)
+        }
+      >
         <Card className="w-[560px] h-[210px] rounded-xl bg-[#d6d6d6] dark:bg-navy-800 fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
           <KeyBinding
             onKey={(e) => {

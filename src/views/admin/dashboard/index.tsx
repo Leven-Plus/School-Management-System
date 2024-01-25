@@ -26,7 +26,7 @@ const Dashboard = ({ modules }:{modules:any}) => {
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Earnings"}
-          subtitle={"$340.5"}
+          subtitle={"₹340.5"}
           // bg="bg-blue-800"
           // titleColor="text-white"
           // subTitleColor="text-white"
@@ -35,7 +35,7 @@ const Dashboard = ({ modules }:{modules:any}) => {
         <Widget
           icon={<IoDocuments className="h-6 w-6" />}
           title={"Spend this month"}
-          subtitle={"$642.39"}
+          subtitle={"₹642.39"}
           // bg="bg-green-800"
           // titleColor="text-white"
           // subTitleColor="text-white"
@@ -44,7 +44,7 @@ const Dashboard = ({ modules }:{modules:any}) => {
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Sales"}
-          subtitle={"$574.34"}
+          subtitle={"₹574.34"}
           // bg="bg-orange-800"
           // titleColor="text-white"
           // subTitleColor="text-white"
@@ -53,7 +53,7 @@ const Dashboard = ({ modules }:{modules:any}) => {
         <Widget
           icon={<MdDashboard className="h-6 w-6" />}
           title={"Your Balance"}
-          subtitle={"$1,000"}
+          subtitle={"₹1,000"}
           // bg="bg-cyan-800"
           // titleColor="text-white"
           // subTitleColor="text-white"
@@ -71,7 +71,7 @@ const Dashboard = ({ modules }:{modules:any}) => {
         <Widget
           icon={<IoMdHome className="h-6 w-6" />}
           title={"Total Projects"}
-          subtitle={"$2433"}
+          subtitle={"₹2433"}
           // bg="bg-gray-800"
           // titleColor="text-white"
           // subTitleColor="text-white"
@@ -86,7 +86,7 @@ const Dashboard = ({ modules }:{modules:any}) => {
           clickable={true}
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Earnings"}
-          subtitle={"$340.5"}
+          subtitle={"₹340.5"}
           // bg="bg-blue-800"
           // titleColor="text-gray-600"
           // subTitleColor="text-white"
@@ -95,7 +95,7 @@ const Dashboard = ({ modules }:{modules:any}) => {
           clickable={true}
           icon={<IoDocuments className="h-6 w-6" />}
           title={"Spend this month"}
-          subtitle={"$642.39"}
+          subtitle={"₹642.39"}
           // bg="bg-green-800"
           // titleColor="text-gray-600"
           // subTitleColor="text-white"
@@ -104,7 +104,7 @@ const Dashboard = ({ modules }:{modules:any}) => {
           clickable={true}
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Sales"}
-          subtitle={"$574.34"}
+          subtitle={"₹574.34"}
           onClick={() => {
             alert("Hello");
           }}
@@ -116,7 +116,7 @@ const Dashboard = ({ modules }:{modules:any}) => {
           clickable={true}
           icon={<MdDashboard className="h-6 w-6" />}
           title={"Your Balance"}
-          subtitle={"$1,000"}
+          subtitle={"₹1,000"}
           // bg="bg-cyan-800"
           // titleColor="text-gray-600"
           // subTitleColor="text-white"
@@ -134,7 +134,7 @@ const Dashboard = ({ modules }:{modules:any}) => {
           clickable={true}
           icon={<IoDocuments className="h-6 w-6" />}
           title={"Spend this month"}
-          subtitle={"$642.39"}
+          subtitle={"₹642.39"}
           // bg="bg-gray-800"
           // titleColor="text-gray-600"
           // subTitleColor="text-white"
@@ -143,7 +143,7 @@ const Dashboard = ({ modules }:{modules:any}) => {
           clickable={true}
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Sales"}
-          subtitle={"$574.34"}
+          subtitle={"₹574.34"}
           onClick={() => {
             alert("Hello");
           }}
@@ -155,7 +155,7 @@ const Dashboard = ({ modules }:{modules:any}) => {
           clickable={true}
           icon={<MdDashboard className="h-6 w-6" />}
           title={"Your Balance"}
-          subtitle={"$1,000"}
+          subtitle={"₹1,000"}
           // bg="bg-brand-800"
           // titleColor="text-gray-600"
           // subTitleColor="text-white"
