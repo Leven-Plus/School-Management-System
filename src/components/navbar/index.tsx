@@ -12,7 +12,6 @@ import {
 import avatar from "../../assets/img/avatars/avatar11.png";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import { LuChevronLeft } from "react-icons/lu";
-import Keybinding from "react-keybinding-component";
 import { IoLanguage } from "react-icons/io5";
 import { useCookies } from "react-cookie";
 
@@ -28,9 +27,7 @@ const Navbar = (props: {
 
   let [headerStick, setHeaderStick] = useState(false);
 
-  function toggleTrue() {
-    props.searchOnClick(true);
-  }
+
 
   const scrollHeaderEvent = (e: Event) => {
     const window = e.currentTarget as Window;
@@ -71,7 +68,8 @@ const Navbar = (props: {
         headerStick ? "border-[#ffffff33] " : ""
       }`}
     >
-      <Keybinding
+      
+      {/* <Keybinding
         onKey={(e) => {
           e.preventDefault();
           if (e.code === "Slash") {
@@ -80,7 +78,8 @@ const Navbar = (props: {
         }}
         type="keydown"
         target={window}
-      />
+      /> */}
+
       <div className="ml-[12px]">
         <p
           className="shrink text-[33px] capitalize text-navy-700 dark:text-white"
