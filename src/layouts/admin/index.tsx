@@ -67,12 +67,12 @@ export default function Admin(props: { [x: string]: any }) {
   const getRandomNumber = () => {
     return Math.floor(Math.random() * 13);
   };
-  
+
   const randomColor = (): {
     pColor: string;
   } => {
     let c = getRandomNumber();
-  
+
     return {
       pColor: progressColor[c],
     };
@@ -96,7 +96,6 @@ export default function Admin(props: { [x: string]: any }) {
 
   const colors = randomColor();
 
-
   return (
     <div className="flex h-full w-full">
       <LoadingBar
@@ -114,7 +113,13 @@ export default function Admin(props: { [x: string]: any }) {
               {index === 0 && (
                 <NavLink
                   compact={sideBarCompact}
-                  name={!sideBarCompact ? <Translate en="Admin" gu="એડમિન" hi="एडमिन" /> : ""}
+                  name={
+                    !sideBarCompact ? (
+                      <Translate en="Admin" gu="એડમિન" hi="एडमिन" />
+                    ) : (
+                      ""
+                    )
+                  }
                   icon={<LiaUserShieldSolid />}
                   to={"/admin"}
                 />
@@ -155,9 +160,8 @@ export default function Admin(props: { [x: string]: any }) {
           </div>
         </main>
       </div>
-      {isModalOpen && (
-          <Modal isOpen={isModalOpen} isClose={setIsModalOpen}/>
-      )}
+
+      <Modal isOpen={isModalOpen} isClose={setIsModalOpen} />
     </div>
   );
 }
