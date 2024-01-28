@@ -11,6 +11,8 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = (props) => {
+  const [search, setSearch] = useState<string>("");
+  const searchRef = useRef<HTMLInputElement>(null);
   const modalCloseAction = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
@@ -35,10 +37,11 @@ const Modal: React.FC<ModalProps> = (props) => {
     },
   };
 
-  const [search, setSearch] = useState<string>("");
-  const searchRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     searchRef.current?.focus();
+    setTimeout(() => {
+      setSearch("");
+    });
   }, [props.isOpen]);
 
   return (
@@ -49,7 +52,7 @@ const Modal: React.FC<ModalProps> = (props) => {
           animate="visible"
           exit="hidden"
           variants={variantsBackdrop}
-          transition={{ ease: "ease", duration: 0.2 }}
+          // transition={{ ease: "ease", duration: 0.2 }}
           className="h-[100vh] w-full fixed top-0 left-0 z-50 bg-[#000000]/80 search-modal"
           onClick={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) =>
             modalCloseAction(e)
@@ -58,14 +61,14 @@ const Modal: React.FC<ModalProps> = (props) => {
           <UseKey
             pressKey="Escape"
             cb={() => props.isClose(false)}
-            disible={false}
+            disable={false}
           />
           <motion.div
             initial="hidden"
             animate="visible"
             exit="hidden"
             variants={variantsMain}
-            transition={{ ease: "ease", duration: 0.25 }}
+            // transition={{ ease: "ease", duration: 0.25 }}
           >
             <Card className="w-[560px] h-[210px] rounded-xl bg-[#d6d6d6] dark:bg-navy-800 fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
               <header className="relative flex items-center justify-between px-4 py-3">
@@ -101,12 +104,27 @@ const Modal: React.FC<ModalProps> = (props) => {
                 </div>
               </header>
               <div className="w-full h-[0.5px] bg-[#A1A1AA]" />
-              <div
-                className="w-full h-[161.2px] flex justify-center items-center"
-                style={{ borderRadius: "0 0 0.75rem 0.75rem" }}
-              >
-                <p className="text-[#A1A1AA]">No Recent Searches</p>
-              </div>
+              {false && (
+                <div
+                  className="w-full h-[161.2px] flex justify-center items-center"
+                  style={{ borderRadius: "0 0 0.75rem 0.75rem" }}
+                >
+                  <p className="text-[#A1A1AA]">No Recent Searches</p>
+                </div>
+              )}
+              {true && (
+                <div
+                  className="mt-3 grid grid-cols-1 gap-5 px-5"
+                  style={{ borderRadius: "0 0 0.75rem 0.75rem" }}
+                >
+                  <Card className="h-[70px] flex items-center">
+                    <div>adasd</div>
+                    <div className="w-[0.5px] h-[100%] bg-white">
+
+                    </div>
+                  </Card>
+                </div>
+              )}
             </Card>
           </motion.div>
         </motion.div>
