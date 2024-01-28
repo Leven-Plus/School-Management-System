@@ -145,6 +145,7 @@ import EmployeeAttendanceEmployeeWise from "../../views/admin/attendancemanageme
 import DayWiseEmployeeMonthlyAttendance from "../../views/admin/attendancemanagement/employeesattendancereportpanel/daywiseemployeemonthlyattendance";
 import DayWiseWithTimeEmployeeMonthlyAttendance from "../../views/admin/attendancemanagement/employeesattendancereportpanel/withtimeemployeemonthlyattendance";
 import Translate from "../../components/multigual/Translate";
+import { m } from "framer-motion";
 
 export type modules = {
   name: any;
@@ -152,6 +153,7 @@ export type modules = {
   icon: JSX.Element;
   icon2: JSX.Element;
   to: string;
+  component?: any;
   modules?: [];
 };
 
@@ -161,6 +163,7 @@ export type Modules = {
   icon: JSX.Element;
   icon2: JSX.Element;
   to: string;
+  component?: any;
   modules?: modules[];
 };
 
@@ -178,6 +181,18 @@ interface CoreData {
   _id?: string;
   title?: string;
   nodes: CoreModules[];
+}
+
+const makeSimpleArray = (data: any) => {
+  const simpleArray = [];
+
+  for (let index = 0; index < data.length; index++) {
+    for (let subIndex = 0; subIndex < data[index]?.nodes?.length; subIndex++) {
+      simpleArray.push(data[index]?.nodes[subIndex]);
+    }
+  }
+
+  return simpleArray;
 }
 
 const DashboardModules: CoreData[] | null = false ? [] : null;
@@ -2762,268 +2777,7 @@ const modulesData: CoreData[] = [
             }}
           />
         ),
-        modules: [
-          {
-            name: "Student Registration Form",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/student-registration",
-            modules: [],
-          },
-          {
-            name: "Student Registration List",
-            icon: <LuUsers2 />,
-            icon2: <LuUsers2  />,
-            to: "/admin/student-management/student-registration-list",
-            modules: [],
-          },
-          {
-            name: "Student Admission List",
-            icon: <LuUsers2 />,
-            icon2: <LuUsers2  />,
-            to: "/admin/student-management/student-admission-list",
-            modules: [],
-          },
-          {
-            name: "RFID Card Assign",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/rfid-card-assign",
-            modules: [],
-          },
-          {
-            name: "Set Fee Category",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/set-fees-category",
-            modules: [],
-          },
-          {
-            name: "Update SMS/Whatsapp Contact",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/update-sms-whatsapp-contact",
-            modules: [],
-          },
-          {
-            name: "Update Student Details",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/update-student-details",
-            modules: [],
-          },
-          {
-            name: "Update Photo & Document",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/update-student-photo-document",
-            modules: [],
-          },
-          {
-            name: "Update Class Details",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/update-class-details",
-            modules: [],
-          },
-          {
-            name: "Promotion/Demotion",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/promotion-demotion",
-            modules: [],
-          },
-          {
-            name: "Student Left",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/student-left",
-            modules: [],
-          },
-          {
-            name: "Update Student Admission Details",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/update-student-admission-details",
-            modules: [],
-          },
-          {
-            name: "Student Physical Fitness",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/student-physical-fitness",
-            modules: [],
-          },
-          {
-            name: "Student Medical Fitness",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/student-medical-fitness",
-            modules: [],
-          },
-          {
-            name: "Student's Parents & Behaviour",
-            icon: <LuUsers2 />,
-            icon2: <LuUsers2  />,
-            to: "/admin/student-management/students-parents-and-behaviour",
-            modules: [],
-          },
-          {
-            name: "Update Employee Child Details",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/update-employee-child-details",
-            modules: [],
-          },
-          {
-            name: "Update Sibling Details",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/update-sibling-details",
-            modules: [],
-          },
-          {
-            name: "Student Info",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/student-info",
-            modules: [],
-          },
-          {
-            name: "Students Activity",
-            icon: <LuUser2 />,
-            icon2: <LuUser2  />,
-            to: "/admin/student-management/student-activity",
-            modules: [],
-          },
-          {
-            name: "Study Material",
-            icon: <LuBookOpen />,
-            icon2: <LuBookOpen  />,
-            to: "/admin/student-management/study-material",
-            modules: [],
-          },
-
-          {
-            name: "Section Wise Strength Report",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/section-wise-strength-report",
-            modules: [],
-          },
-          {
-            name: "Section Stream Wise Strength Report",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/section-stream-wise-strength-report",
-            modules: [],
-          },
-          {
-            name: "Overall Strength Report",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/overall-strength-report",
-            modules: [],
-          },
-          {
-            name: "Gender Wise Strength Report",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/gender-wise-strength-report",
-            modules: [],
-          },
-          {
-            name: "Religion Wise Strength Report",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/religion-wise-strength-report",
-            modules: [],
-          },
-          {
-            name: "Religion Wise Strength Report-2",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/religion-wise-strength-report-2",
-            modules: [],
-          },
-          {
-            name: "Category Wise Strength Report",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/category-wise-strength-report",
-            modules: [],
-          },
-          {
-            name: "Category Wise Strength Report-2",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/category-wise-strength-report-2",
-            modules: [],
-          },
-          {
-            name: "Student Castewise Report",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/student-caste-wise-report",
-            modules: [],
-          },
-          {
-            name: "Student Villagewise Report",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/student-village-wise-report",
-            modules: [],
-          },
-          {
-            name: "Student Blockwise Report",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/student-block-city-wise-report",
-            modules: [],
-          },
-          {
-            name: "Student Address Wise Report",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/student-address-wise-report",
-            modules: [],
-          },
-          {
-            name: "New Registrations",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/new-registration-report",
-            modules: [],
-          },
-          {
-            name: "Agewise List",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/age-wise-report",
-            modules: [],
-          },
-          {
-            name: "Agewise List-2",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/age-wise-report-2",
-            modules: [],
-          },
-          {
-            name: "Streamwise Category Report",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/stream-wise-category-report",
-            modules: [],
-          },
-          {
-            name: "Sibling Report",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/student-management/siblings-report",
-            modules: [],
-          },
-        ],
+        modules: makeSimpleArray(StudentManagementModules),
       },
       {
         name: <Translate en="Certificate Management" gu="પ્રમાણપત્ર મેનેજમેન્ટ" hi="प्रमाणपत्र मैनेजमेंट" />,
@@ -3039,7 +2793,7 @@ const modulesData: CoreData[] = [
             }}
           />
         ),
-        modules: [],
+        modules: makeSimpleArray(CertificateManagementModules),
       },
       {
         name: <Translate en="ID Card Management" gu="આઈડી કાર્ડ મેનેજમેન્ટ" hi="आईडी कार्ड मैनेजमेंट" />,
@@ -3055,64 +2809,7 @@ const modulesData: CoreData[] = [
             }}
           />
         ),
-        modules: [
-          {
-            name: "Student ID Generate",
-            icon: <PiIdentificationBadge />,
-            icon2: <PiIdentificationBadge  />,
-            to: "/admin/id-card-management/generate-student-id",
-            modules: [],
-          },
-          {
-            name: "Father ID Generate",
-            icon: <PiIdentificationBadge />,
-            icon2: <PiIdentificationBadge  />,
-            to: "/admin/id-card-management/generate-father-id",
-            modules: [],
-          },
-          {
-            name: "Mother ID Generate",
-            icon: <PiIdentificationBadge />,
-            icon2: <PiIdentificationBadge  />,
-            to: "/admin/id-card-management/generate-mother-id",
-            modules: [],
-          },
-          {
-            name: "Both Combine (Father Mother)",
-            icon: <PiIdentificationCard />,
-            icon2: <PiIdentificationCard  />,
-            to: "/admin/id-card-management/generate-parents-combine-id",
-            modules: [],
-          },
-          {
-            name: "Guardian ID Generate",
-            icon: <PiIdentificationBadge />,
-            icon2: <PiIdentificationBadge  />,
-            to: "/admin/id-card-management/generate-guardian-id",
-            modules: [],
-          },
-          {
-            name: "Employee ID Generate",
-            icon: <LuUserCheck2 />,
-            icon2: <LuUserCheck2  />,
-            to: "/admin/id-card-management/generate-employee-id",
-            modules: [],
-          },
-          {
-            name: "Hostel ID Card",
-            icon: <PiIdentificationBadge />,
-            icon2: <PiIdentificationBadge  />,
-            to: "/admin/id-card-management/generate-student-hostel-id",
-            modules: [],
-          },
-          {
-            name: "Bus ID Card",
-            icon: <LuBus />,
-            icon2: <LuBus  />,
-            to: "/admin/id-card-management/generate-bus-id",
-            modules: [],
-          },
-        ],
+        modules: makeSimpleArray(IdCardManagementModules),
       },
     ],
   },
@@ -3134,155 +2831,7 @@ const modulesData: CoreData[] = [
             }}
           />
         ),
-        modules: [
-          {
-            name: "Student Attendance Fill",
-            icon: <LuListChecks />,
-            icon2: <LuListChecks  />,
-            to: "/admin/attendance-management/fill-student-attendance",
-            modules: [],
-          },
-          {
-            name: "Student Attendance List",
-            icon: <LuList />,
-            icon2: <LuList  />,
-            to: "/admin/attendance-management/student-attendance-list",
-            modules: [],
-          },
-          {
-            name: "Attendance Graphs",
-            icon: <LuPieChart />,
-            icon2: <LuPieChart  />,
-            to: "/admin/attendance-management/student-attendance-report",
-            modules: [],
-          },
-          {
-            name: "Student ATT. & SMS",
-            icon: <TiMessages />,
-            icon2: <TiMessages  />,
-            to: "/admin/attendance-management/student-attendance-and-sms",
-            modules: [],
-          },
-          {
-            name: "Employee Attendance Fill",
-            icon: <LuListChecks />,
-            icon2: <LuListChecks  />,
-            to: "/admin/attendance-management/fill-employee-attendance",
-            modules: [],
-          },
-          {
-            name: "Employee Attendance List",
-            icon: <LuList />,
-            icon2: <LuList  />,
-            to: "/admin/attendance-management/employee-attendance-list",
-            modules: [],
-          },
-          {
-            name: "Students RFID Management",
-            icon: <LuUsers2 />,
-            icon2: <LuUsers2  />,
-            to: "/admin/attendance-management/student-rfid-management",
-            modules: [],
-          },
-          {
-            name: "Employee RFID Management",
-            icon: <LuUserCheck2 />,
-            icon2: <LuUserCheck2  />,
-            to: "/admin/attendance-management/employee-rfid-management",
-            modules: [],
-          },
-          {
-            name: "Student RFID Machine",
-            icon: <LuTablet />,
-            icon2: <LuTablet  />,
-            to: "/admin/attendance-management/student-rfid-machine",
-            modules: [],
-          },
-          {
-            name: "Employee RFID Machine",
-            icon: <LuTablet />,
-            icon2: <LuTablet  />,
-            to: "/admin/attendance-management/employee-rfid-machine",
-            modules: [],
-          },
-          {
-            name: "Data Received From RFID Machine",
-            icon: <LuDatabase />,
-            icon2: <LuDatabase  />,
-            to: "/admin/attendance-management/data-received-from-rfid-machine",
-            modules: [],
-          },
-          {
-            name: "Student Report (Class Wise)",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/attendance-management/student-attendance-report-class-wise",
-            modules: [],
-          },
-          {
-            name: "Daily Student Report (Gender Wise)",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/attendance-management/daily-student-attendance-report-gender-wise",
-            modules: [],
-          },
-          {
-            name: "Attendance Report (Student Wise)",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/attendance-management/attendance-report-student-wise",
-            modules: [],
-          },
-          {
-            name: "Student Attendance Monthly (Day Wise)",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/attendance-management/student-attendance-monthly-day-wise",
-            modules: [],
-          },
-          {
-            name: "Student Attendance Annually",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/attendance-management/student-attendance-annually",
-            modules: [],
-          },
-          {
-            name: "Student Attendance Monthly (With Time)",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/attendance-management/student-attendance-monthly-with-time",
-            modules: [],
-          },
-          {
-            name: "Employee Report (Category Wise)",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/attendance-management/employee-attendance-report-category-wise",
-            modules: [],
-          },
-          {
-            name: "Employee Report (Employee Wise)",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/attendance-management/employee-attendance-report-employee-wise",
-            modules: [],
-          },
-          {
-            name: "Employee Attendance Monthly (Day Wise)",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/attendance-management/employee-attendance-monthly-day-wise",
-            modules: [],
-          },
-          {
-            name: "Employee Attendance Monthly (With Time)",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/attendance-management/employee-attendance-monthly-with-time",
-            modules: [],
-          },
-        ],
+        modules: makeSimpleArray(AttendanceManagementModules),
       },
       {
         name: <Translate en="Leave Managenet" gu="રજા મેનેજમેન્ટ" hi="छुट्टी मैनेजमेंट" />,
@@ -3320,65 +2869,7 @@ const modulesData: CoreData[] = [
             }}
           />
         ),
-        modules: [
-          {
-            name: "Add Employee",
-            icon: <LuUserPlus2 />,
-            icon2: <LuUserPlus2  />,
-            to: "/admin/employee-management/add-employee",
-            modules: [],
-          },
-          {
-            name: "Employee List",
-            icon: <LuList />,
-            icon2: <LuList  />,
-            to: "/admin/employee-management/employee-list",
-            modules: [],
-          },
-          {
-            name: "Dropped List",
-            icon: <LuUserX2 />,
-            icon2: <LuUserX2  />,
-            to: "/admin/employee-management/dropped-employee-list",
-            modules: [],
-          },
-          {
-            name: "RFID Card Assign",
-            icon: <LuTablet />,
-            icon2: <LuTablet  />,
-            to: "/admin/employee-management/employee-rfid-card-assign",
-            modules: [],
-          },
-          {
-            name: "Attendance Register",
-            icon: <LuClipboardList />,
-            icon2: <LuClipboardList  />,
-            to: "/admin/employee-management/employee-attendance-register",
-            modules: [],
-          },
-
-          {
-            name: "Photo And Document Update",
-            icon: <LuUserSquare2 />,
-            icon2: <LuUserSquare2  />,
-            to: "/admin/employee-management/update-employee-photo-document",
-            modules: [],
-          },
-          {
-            name: "Employee Profile Update",
-            icon: <LuUserCog2 />,
-            icon2: <LuUserCog2  />,
-            to: "/admin/employee-management/update-employee-profile",
-            modules: [],
-          },
-          {
-            name: "Salary Info Update",
-            icon: <PiMoney />,
-            icon2: <PiMoney  />,
-            to: "/admin/employee-management/update-employee-salary-info",
-            modules: [],
-          },
-        ],
+        modules: makeSimpleArray(EmployeeManagementModules),
       },
     ],
   },
@@ -3400,70 +2891,7 @@ const modulesData: CoreData[] = [
             }}
           />
         ),
-        modules: [
-          {
-            name: "Fees",
-            icon: <FaRegMoneyBillAlt />,
-            icon2: <FaRegMoneyBillAlt  />,
-            to: "/admin/fees-management/fees",
-          },
-          {
-            name: "Transport Fees",
-            icon: <FaRegMoneyBillAlt />,
-            icon2: <FaRegMoneyBillAlt  />,
-            to: "/admin/fees-management/transport-fees",
-            modules: [],
-          },
-          {
-            name: "Combine Fees",
-            icon: <FaRegMoneyBillAlt />,
-            icon2: <FaRegMoneyBillAlt  />,
-            to: "/admin/fees-management/combine-transport",
-            modules: [],
-          },
-          {
-            name: "Hostel Fees",
-            icon: <FaRegMoneyBillAlt />,
-            icon2: <FaRegMoneyBillAlt  />,
-            to: "/admin/fees-management/hostel-fees",
-            modules: [],
-          },
-          {
-            name: "Other Fees",
-            icon: <FaRegMoneyBillAlt />,
-            icon2: <FaRegMoneyBillAlt  />,
-            to: "/admin/fees-management/other-fees",
-            modules: [],
-          },
-          {
-            name: "Previous Fees",
-            icon: <FaRegMoneyBillAlt />,
-            icon2: <FaRegMoneyBillAlt  />,
-            to: "/admin/fees-management/previous-fees",
-            modules: [],
-          },
-          {
-            name: "Fees Reports",
-            icon: <FaRegMoneyBillAlt />,
-            icon2: <FaRegMoneyBillAlt  />,
-            to: "/admin/fees-management/fees-reports",
-            modules: [],
-          },
-          {
-            name: "Dues Management & SMS",
-            icon: <TbMessageDollar />,
-            icon2: <TbMessageDollar  />,
-            to: "/admin/dues-management",
-            modules: [],
-          },
-          {
-            name: "Penalty & Caution Money",
-            icon: <LuHourglass />,
-            icon2: <LuHourglass  />,
-            to: "/admin/penalty-caution-money-management",
-            modules: [],
-          },
-        ],
+        modules: makeSimpleArray(FeesManagementModules),
       },
       {
         name: <Translate en="Account Management" gu="હિસાબી મેનેજમેન્ટ" hi="खाता मैनेजमेंट" />,
@@ -3479,22 +2907,7 @@ const modulesData: CoreData[] = [
             }}
           />
         ),
-        modules: [
-          {
-            name: "Stock Management",
-            icon: <LuBox />,
-            icon2: <LuBox  />,
-            to: "/admin/account-management/stock-management",
-            modules: [],
-          },
-          {
-            name: "Assets Management",
-            icon: <LuListOrdered />,
-            icon2: <LuListOrdered  />,
-            to: "/admin/account-management/assets-management",
-            modules: [],
-          },
-        ],
+        modules: makeSimpleArray(AccountManagementModules),
       },
     ],
   },
@@ -3618,51 +3031,7 @@ const modulesData: CoreData[] = [
             }}
           />
         ),
-        modules: [
-          {
-            name: "Examination Management",
-            icon: <PiExam />,
-            icon2: <PiExam  />,
-            to: "/admin/examination/examination-management",
-            modules: [],
-          },
-          {
-            name: "Monthly Test",
-            icon: <PiExam />,
-            icon2: <PiExam  />,
-            to: "/admin/monthly-exams",
-            modules: [],
-          },
-          {
-            name: "Weekly/Surprise Test",
-            icon: <PiExam />,
-            icon2: <PiExam  />,
-            to: "/admin/weekly-surprise-exams",
-            modules: [],
-          },
-          {
-            name: "Exam Results",
-            icon: <PiStudent />,
-            icon2: <PiStudent  />,
-            to: "/admin/exam-results",
-            modules: [],
-          },
-
-          {
-            name: "Exam Paper Setter",
-            icon: <LuPenLine />,
-            icon2: <LuPenLine  />,
-            to: "/admin/exam-paper-setter",
-            modules: [],
-          },
-          {
-            name: "Conduct Online Exam",
-            icon: <PiExam />,
-            icon2: <PiExam  />,
-            to: "/admin/conduct-online-exam",
-            modules: [],
-          },
-        ],
+        modules: makeSimpleArray(ExaminationManagementModules),
       },
     ],
   },
@@ -3804,29 +3173,7 @@ const modulesData: CoreData[] = [
             }}
           />
         ),
-        modules: [
-          {
-            name: "Gallery Management",
-            icon: <LuGalleryHorizontalEnd />,
-            icon2: <LuGalleryHorizontalEnd  />,
-            to: "/admin/gallery-management",
-            modules: [],
-          },
-          {
-            name: "School Calendar",
-            icon: <LuCalendarDays />,
-            icon2: <LuCalendarDays  />,
-            to: "/admin/school-calendar",
-            modules: [],
-          },
-          {
-            name: "Session Management",
-            icon: <LuCalendarClock />,
-            icon2: <LuCalendarClock  />,
-            to: "/admin/session-management",
-            modules: [],
-          },
-        ],
+        modules: makeSimpleArray(SchoolInfoModules),
       },
       {
         name: <Translate en="Dowload Data" gu="ડેટા ડાઉનલોડ" hi="डेटा डाउनलोड" />,
@@ -3874,36 +3221,7 @@ const modulesData: CoreData[] = [
             }}
           />
         ),
-        modules: [
-          {
-            name: "Software Settings",
-            icon: <LuSettings />,
-            icon2: <LuSettings  />,
-            to: "/admin/software-settings",
-            modules: [],
-          },
-          {
-            name: "Software Backup & Security",
-            icon: <LuDatabaseBackup />,
-            icon2: <LuDatabaseBackup  />,
-            to: "/admin/software-backup-security",
-            modules: [],
-          },
-          {
-            name: "Software Training Videos",
-            icon: <LuYoutube />,
-            icon2: <LuYoutube  />,
-            to: "/admin/software-training-videos",
-            modules: [],
-          },
-          {
-            name: "Software Support",
-            icon: <LuUserCircle2 />,
-            icon2: <LuUserCircle2  />,
-            to: "/admin/software-support",
-            modules: [],
-          },
-        ],
+        modules: makeSimpleArray(SoftwareManagementModules),
       },
     ],
   },
