@@ -14,11 +14,12 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
 import { LuChevronLeft } from "react-icons/lu";
 import { IoLanguage } from "react-icons/io5";
 import { useCookies } from "react-cookie";
+import UseKey from "../useKey";
 
 const Navbar = (props: {
   onOpenSidenav: () => void;
   brandText: string;
-  searchOnClick: any;
+  searchOnClick: Function;
 }) => {
   const { onOpenSidenav, brandText } = props;
   // const [darkmode, setDarkmode] = React.useState(false);
@@ -26,8 +27,6 @@ const Navbar = (props: {
   const [cookies, setCookie] = useCookies();
 
   let [headerStick, setHeaderStick] = useState(false);
-
-
 
   const scrollHeaderEvent = (e: Event) => {
     const window = e.currentTarget as Window;
@@ -68,17 +67,11 @@ const Navbar = (props: {
         headerStick ? "border-[#ffffff33] " : ""
       }`}
     >
-      
-      {/* <Keybinding
-        onKey={(e) => {
-          e.preventDefault();
-          if (e.code === "Slash") {
-            toggleTrue();
-          }
-        }}
-        type="keydown"
-        target={window}
-      /> */}
+      <UseKey
+        pressKey="/"
+        cb={() => props.searchOnClick(true)}
+        disable={false}
+      />
 
       <div className="ml-[12px]">
         <p
@@ -134,7 +127,13 @@ const Navbar = (props: {
           <div className="flex items-center">
             <input
               type="text"
-              placeholder={cookies.preferedLanguage === "gu" ? "શોધો..." : cookies.preferedLanguage === "hi" ? "खोजें..." : "Search..."}
+              placeholder={
+                cookies.preferedLanguage === "gu"
+                  ? "શોધો..."
+                  : cookies.preferedLanguage === "hi"
+                  ? "खोजें..."
+                  : "Search..."
+              }
               onClick={() =>
                 props.searchOnClick(true)
                   ? () => props.searchOnClick(true)
@@ -260,19 +259,25 @@ const Navbar = (props: {
             <div className="z-50 w-max rounded-xl bg-white py-3 px-4 text-sm shadow-xl shadow-shadow-500 dark:!bg-navy-700 dark:shadow-none">
               <p
                 className="hover:text-black flex cursor-pointer items-center gap-2 text-gray-600 hover:text-gray-300"
-                onClick={() => setCookie("preferedLanguage", "en", { path: "/" })}
+                onClick={() =>
+                  setCookie("preferedLanguage", "en", { path: "/" })
+                }
               >
                 English
               </p>
               <p
                 className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:text-gray-300"
-                onClick={() => setCookie("preferedLanguage", "gu", { path: "/" })}
+                onClick={() =>
+                  setCookie("preferedLanguage", "gu", { path: "/" })
+                }
               >
                 Gujarati
               </p>
               <p
                 className="hover:text-black mt-2 flex cursor-pointer items-center gap-2 pt-1 text-gray-600 hover:text-gray-300"
-                onClick={() => setCookie("preferedLanguage", "hi", { path: "/" })}
+                onClick={() =>
+                  setCookie("preferedLanguage", "hi", { path: "/" })
+                }
               >
                 Hindi
               </p>
