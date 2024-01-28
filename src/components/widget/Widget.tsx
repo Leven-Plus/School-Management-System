@@ -132,7 +132,9 @@ const Widget = (props: {
       {!props.clickable ? (
         <>
           <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
-            <div className={`rounded-full ${colors.bg} ${colors.bghover} duration-500 y p-3 dark:bg-navy-700`}>
+            <div
+              className={`rounded-full ${colors.bg} ${colors.bghover} duration-500 y p-3 dark:bg-navy-700`}
+            >
               <span className={`flex items-center ${colors.text}`}>{icon}</span>
             </div>
           </div>
@@ -175,7 +177,9 @@ const Widget = (props: {
             </p>
           </div>
           <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center mr-5">
-            <div className={`rounded-full ${colors.bg} ${colors.bghover} duration-500 p-3 dark:bg-navy-700`}>
+            <div
+              className={`rounded-full ${colors.bg} ${colors.bghover} duration-500 p-3 dark:bg-navy-700`}
+            >
               <span className={`flex items-center text-[2rem] ${colors.text}`}>
                 {icon}
               </span>
