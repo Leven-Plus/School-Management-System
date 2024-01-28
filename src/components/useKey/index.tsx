@@ -1,30 +1,29 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 type UseKeyProps = {
-    pressKey: string,
-    cb: Function,
-    disible?: boolean
-}
+  pressKey: string;
+  cb: Function;
+  disable?: boolean;
+};
 
-const  UseKey = ({pressKey, cb, disible=false}:UseKeyProps) => {
+const UseKey = ({ pressKey, cb, disable = false }: UseKeyProps) => {
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      if (!disable) {
+        if (event.key == pressKey) {
+          cb();
+        }
+      }
+    };
 
-    useEffect(() => {
-        const handleKeyPress = (event: KeyboardEvent) => {
-            if (!disible) {
-                if (event.key == pressKey)  {
-                    cb()
-                }
-            };
-        };
+    window.addEventListener("keydown", handleKeyPress);
 
-        window.addEventListener('keydown', handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
 
-        return () => {
-            window.removeEventListener('keydown', handleKeyPress);
-        };
-    }, []);
-
-    return <></>;
+  return <></>;
 };
 
 export default UseKey;
